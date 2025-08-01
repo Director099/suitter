@@ -1,0 +1,8 @@
+mixin field-checkbox({title, styleBox, counter})
+  label.field-checkbox&attributes(attributes)
+    input.field-checkbox__input(type="checkbox")
+    span.field-checkbox__box
+    if(styleBox)
+      span.field-checkbox__box-color(style=styleBox)
+    span.field-checkbox__text= title
+      i.field-checkbox__counter=counter

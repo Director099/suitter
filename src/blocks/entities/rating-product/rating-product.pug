@@ -1,0 +1,27 @@
+mixin rating-product()
+  .rating-product&attributes(attributes)
+    .rating-product__content
+      .rating-product__row
+        +final-rating.rating-product__stars
+      strong.rating-product__number 5.0 #[span / 27 отзывов]
+    ul.rating-product__progress
+      li.rating-product__progress-item
+        span.rating-product__count-stars 5 звезд
+        +progress('90').rating-product__progress-bar
+        span.rating-product__progress-count 25
+      li.rating-product__progress-item
+        span.rating-product__count-stars 4 звезды
+        +progress('10').rating-product__progress-bar
+        span.rating-product__progress-count 2
+      li.rating-product__progress-item
+        span.rating-product__count-stars 3 звезды
+        +progress('0').rating-product__progress-bar
+        span.rating-product__progress-count 0
+      li.rating-product__progress-item
+        span.rating-product__count-stars 2 звезды
+        +progress('0').rating-product__progress-bar
+        span.rating-product__progress-count 0
+      li.rating-product__progress-item
+        span.rating-product__count-stars 1 звезда
+        +progress('0').rating-product__progress-bar
+        span.rating-product__progress-count 0

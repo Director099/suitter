@@ -1,0 +1,34 @@
+mixin subscribe
+  .subscribe&attributes(attributes)
+    .subscribe__column
+      section.subscribe__gap
+        h3.subscribe__title Подпишись на рассылку.
+        .subscribe__desc
+          p Скидка на #[b 1ый заказ  10%] для подписчиков рассылки
+        +socials
+    .subscribe__column
+      form.subscribe__form(data-form="")
+        .subscribe__form-row
+          +field-text({
+            attrs: {
+              class: 'subscribe__field',
+              placeholder: formFilelds.email.attrs.placeholder,
+              type: formFilelds.email.attrs.type,
+              required: true,
+              "data-pristine-email-message": formFilelds.email.attrs["data-pristine-email-message"],
+              'data-pristine-required-message': " ",
+            }
+          }).subscribe__field-text
+          button.subscribe__btn(data-form-btn="") Подписаться
+            svg.d-none.d-lg-block(width="21", height="18")
+              use(href="img/symbols.svg#icon-send")
+        +field-checkbox([
+          {
+            title: 'Нажимая на кнопку, вы даёте согласие на обработку своих персональных данных',
+            attrs: {
+              name: 'check',
+              checked: true,
+              required: true,
+            }
+          },
+        ]).subscribe__checkbox

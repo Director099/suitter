@@ -1,0 +1,229 @@
+@mixin identTable {
+  padding: 10px 16px;
+
+  @media (min-width: $screen-lg) {
+    padding: 16px 20px;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding: 20px 35px;
+  }
+}
+
+@mixin identTitle {
+  padding: 0 16px;
+
+  @media (min-width: $screen-lg) {
+    padding: 0 20px;
+  }
+
+  @media (min-width: $screen-xl) {
+    padding: 0 35px;
+  }
+}
+
+.table-char {
+  position: relative;
+  display: block;
+  width: 100%;
+  padding: 18px 0 10px;
+
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+
+  fill: transparent;
+  stroke: $bg-color;
+
+  &.is-active .table-char__title::after {
+    transform: translateY(-50%) rotate(-0deg);
+  }
+}
+
+
+.table-char.current {
+  color: $white;
+
+  stroke: $white;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: -10px;
+    right: -10px;
+    top: 0;
+    bottom: 0;
+    background-color: $bg-color;
+    border-radius: 14px;
+    z-index: -1;
+  }
+}
+
+.table-char__wrap-table {
+  width: 100%;
+}
+
+.table-char__table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-char__label {
+  //@include identTable();
+  width: 100%;
+
+}
+
+.table-char__value,
+.table-char__label {
+  padding-top: 21.5px;
+  padding-bottom: 21.5px;
+}
+
+.table-char__text {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 84px;
+}
+
+.table-char__warning {
+  display: block;
+
+}
+
+.table-char__subtitle {
+  margin-bottom: 0;
+}
+
+.table-char__header {
+  //@include identTitle();
+  margin-bottom: 20px;
+
+  @media (min-width: $screen-lg) {
+    margin-bottom: 16px;
+  }
+}
+
+.table-char__title {
+  position: relative;
+  margin-bottom: 0;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 130%;
+  letter-spacing: 0.1px;
+  text-transform: uppercase;
+
+
+  &::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    transform: translateY(-50%) rotate(-180deg);
+    transition: $time;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='14' viewBox='0 0 26 14' fill='none'%3E%3Cpath d='M1 13L13 1L25 13' stroke='%23070707' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+
+    @media (min-width: $screen-lg) {
+      display: none;
+    }
+  }
+}
+
+.table-char__icon-title {
+  display: block;
+  margin: 0 auto 5px;
+  text-align: center;
+}
+
+.table-char__btn {
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 100%;
+}
+
+.table-char__btn-content {
+  position: relative;
+  margin-top: 19px;
+}
+
+.table-char__text-btn {
+  margin-bottom: 0;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 130%;
+
+  color: $black;
+  margin-top: 27px;
+
+  @media (min-width: $screen-lg) {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    text-align: center;
+
+    &::after {
+      content: '';
+      position: absolute;
+      left: -28px;
+      top: -28px;
+      display: block;
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='36' viewBox='0 0 24 36' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M23.5401 35.2343C22.8906 35.405 22.2848 35.6866 21.6426 35.7689C20.7158 35.878 19.7598 35.9132 18.8185 35.7718C13.0102 34.9435 7.96158 32.406 4.41716 27.6946C0.829006 22.8724 -0.0150249 17.3099 2.10375 11.5617C3.15584 8.66907 4.81346 6.13578 6.87231 3.87147C7.25925 3.46258 7.6097 3.06808 8.21569 2.35921C6.96788 2.29588 6.01924 2.24274 5.03412 2.20399C5.02688 2.07869 4.98315 1.96777 4.96133 1.8055C5.2022 1.6678 5.41391 1.45616 5.68394 1.3924C7.00493 0.999674 8.3405 0.643923 9.67607 0.288168C10.5591 0.0681184 11.4641 -0.203288 12.1935 0.577097C12.974 1.38007 12.7473 2.40928 12.3748 3.28242C11.8342 4.47811 11.1551 5.64303 10.4613 6.77098C10.3007 7.0052 9.84093 7.0156 9.51249 7.14511C9.38129 6.81237 9.11145 6.44885 9.16995 6.16946C9.38195 5.31691 9.74717 4.53211 10.0832 3.67336C9.95917 3.67956 9.85702 3.6344 9.83511 3.68576C2.94375 9.73525 0.495692 17.5357 4.65888 25.6342C4.85574 26.0265 5.08908 26.4044 5.39542 26.7535C9.41405 31.7051 14.5282 34.5158 20.8621 34.9659C21.6867 35.0253 22.5479 34.8566 23.4017 34.7762C23.46 34.9241 23.4818 35.0864 23.5401 35.2343Z' fill='%231E1E1E'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
+      background-position: center;
+      width: 22px;
+      height: 39px;
+    }
+  }
+}
+
+.table-char--order {
+  @media (min-width: $screen-lg) {
+    text-align: center;
+  }
+}
+
+.table-char--order .table-char__label {
+  display: block;
+
+  @media (min-width: $screen-lg) {
+    display: none;
+  }
+}
+
+.table-char--order .table-char__value {
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 130%;
+  letter-spacing: 0.1px;
+}
+
+.table-char--first {
+  display: none;
+  @media (min-width: $screen-lg) {
+    text-align: left;
+    display: block;
+
+    padding: 18px 0;
+  }
+}
+
+.table-char--first .table-char__header {
+  @media (min-width: $screen-lg) {
+    padding-top: 40px;
+  }
+}
+
+.table-char--first .table-char__text {
+  justify-content: flex-start;
+
+  @media (min-width: $screen-lg) {
+    padding-right: 20px;
+  }
+}

@@ -1,0 +1,5 @@
+mixin payment
+  ul.payment&attributes(attributes)
+    each item, i in Array.from({length: 6})
+      li.payment__item
+        img(src=`img/content/payment/pay-${i + 1}.png`, alt="payment")

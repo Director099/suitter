@@ -1,0 +1,29 @@
+include ./mock
+
+mixin page-articles({title})
+  .page-catalog&attributes(attributes)
+    header.page-catalog__header
+      +breadcrumbs.page-catalog__breadcrumbs
+        +breadcrumbs-item(pages.index.text, pages.index.href)
+        +breadcrumbs-item(title)
+      section.page-catalog__row
+        h1.page-catalog__title= title
+        .page-catalog__col
+          +dropdown({
+            text: 'Сортировка',
+          }).page-catalog__dropdown
+            span.dropdown__content
+              span.dropdown__item-content.active
+                a.dropdown__link-content(href='#') По умолчанию
+              span.dropdown__item-content
+                a.dropdown__link-content(href='#') По популярности
+              span.dropdown__item-content
+                a.dropdown__link-content(href='#') По новизне
+      ul.page-catalog__category
+        each item in blogCatigorise
+          li.page-catalog__category-item
+            +tag-filter({
+              title: item.linkTitle,
+              iconClose: false
+            })(href=pages.catalogCategory.href)
+    block

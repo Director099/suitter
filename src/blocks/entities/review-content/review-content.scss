@@ -1,0 +1,33 @@
+.review-content__name {
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.review-content__desc {
+  p {
+    margin: 0;
+  }
+}
+
+.review-content__list {
+  @include ul-none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.review-content__label {
+  display: block;
+}
+
+.review-content__grid {
+  display: grid;
+  gap: 20px;
+  @media (min-width: $screen-xxl) {
+    grid-template-columns: 1fr 230px;
+    gap: $lgHeightHeader;
+  }
+}

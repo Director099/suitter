@@ -1,0 +1,48 @@
+.size-table__list {
+  @include ul-none;
+}
+
+.size-table .tab-filter__item {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.size-table__table {
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 120%;
+  text-align: center;
+  border-bottom: 1px solid $color-gray;
+}
+
+.size-table__table table {
+  min-width: 380px;
+}
+
+.size-table__table th {
+  font-weight: 300;
+  border-color: $color-gray;
+}
+
+.size-table__table td,
+.size-table__table th {
+  padding: 16px 2px;
+  vertical-align: middle;
+}
+
+.size-table__warning {
+  display: block;
+  color: $color-gray;
+  margin-bottom: 40px;
+
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 120%;
+}
+
+.size-table__content {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 140%;
+  margin: 0;
+}

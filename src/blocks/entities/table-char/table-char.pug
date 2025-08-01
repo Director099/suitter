@@ -1,0 +1,37 @@
+mixin table-char({list, title, warnigText, subtitle, iconTitle, hasBtn, isAccordion=false})
+  - const dataAttrAccordionContent = isAccordion && `content`;
+  - const dataAttrAccordionButton = isAccordion && `button`;
+
+  .table-char&attributes(attributes)
+    if(title)
+      header.table-char__header
+        h2.table-char__title(data-accordion=dataAttrAccordionButton)
+          if(iconTitle)
+            img.table-char__icon-title(src="img/content/icon-lock.png" width="34" height="34" alt="Замок")
+          span!= title
+        if(subtitle)
+          p.table-char__subtitle!= subtitle
+    .table-char__wrap-table(data-accordion=dataAttrAccordionContent)
+      table.table-char__table
+        each item, i in list
+          tr.table-char__tr
+            if(item.label)
+              td.table-char__label
+                span.table-char__text!= item.label
+            if(item.value)
+              td.table-char__value
+                span.table-char__text
+                  if(item.value === "+")
+                    svg(width="36", height="36")
+                      use(href=`img/symbols.svg#icon-tick`)
+                  else if(item.value === "-")
+                    svg(width="36", height="36")
+                      use(href=`img/symbols.svg#icon-minus`)
+                  else
+                    = item.value
+      if(warnigText)
+        span.table-char__warning= warnigText
+    if(hasBtn)
+      .table-char__btn-content
+        a.btn.btn--light.table-char__btn(href="#") Получить ключ
+        p.table-char__text-btn Откройте первый замок уже сейчас

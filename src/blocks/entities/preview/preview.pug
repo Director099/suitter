@@ -1,0 +1,31 @@
+mixin preview(item)
+  -
+    const {
+      title = "Пуховик Lime Short",
+      priceCurrent = "900",
+      priceSale = "5 768",
+      img,
+      btnFavoriteActive = false,
+    } = item
+  article.preview&attributes(attributes)
+    a.preview__btn-favorite(href=!btnFavoriteActive && "#modal-no-entry" data-fancybox=!btnFavoriteActive && '' class=btnFavoriteActive && 'active')
+      svg(width="30", height="30")
+        use(href=`img/symbols.svg#icon-heart`)
+    a.preview__link(href=pages.catalogSingle.href)
+      .preview__swiper-wrap
+        .swiper(data-preview-slider="")
+          .swiper-wrapper
+            - for(let i = 1; i < 4; i++)
+              .swiper-slide.preview__img
+                img(src=`img/content/preview-1/prev-${i}.jpg` alt=title)
+          .swiper-pagination.preview__pagination
+      h3.preview__title= title
+      .preview__footer
+        .preview__price
+          span.preview__price-text= `${priceCurrent} BYN`
+        .preview__composition
+          span 100% гусиный пух
+        .preview__colors
+          span.preview__circle(style="background-color: #000")
+          span.preview__circle.preview__circle--active(style="background-color: #F3FBA7")
+          span.preview__circle(style="background-color: #D5E1E9")

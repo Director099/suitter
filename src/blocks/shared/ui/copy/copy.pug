@@ -1,0 +1,6 @@
+mixin copy(text)
+  .copy(data-copy-code="")=text
+    input.copy__hidden(value=text)
+    button.copy__btn(type="button")
+      svg(width="16" height="16")
+        use(href="img/symbols.svg#icon-copy")

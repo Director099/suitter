@@ -1,0 +1,13 @@
+mixin product-gallery({title, img})
+  .product-gallery&attributes(attributes)
+    .swiper.product-gallery__swiper(data-gallary-slider="")
+      .swiper-wrapper.product-gallery__slider-wrap
+        each item, i in Array.from({length: 6})
+          - const addClass = [0,1].includes(i) ? 'grid-tpl-col-lg-2' : '';
+          .swiper-slide.product-gallery__item( class=addClass)
+            img(data-fancybox="product-gallery" src=`img/content/preview-${img}/prev-${i + 1}.jpg` alt=title)
+            if(i === 0)
+              +tag({text: 'весь образ', tagName: "a"})(href="#block-image").product-gallery__link
+                svg(width="12" height="12")
+                  use(href="img/symbols.svg#icon-eye")
+      .swiper-pagination.product-gallery__pagination.d-lg-none

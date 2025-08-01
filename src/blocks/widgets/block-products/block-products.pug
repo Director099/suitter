@@ -1,0 +1,19 @@
+mixin block-products({title, textLink, btnText, hasSlider=true})
+  .block-products&attributes(attributes)
+    header.block-products__header
+      h2.main-title.block-products__title= title
+      if(!!textLink)
+        a.btn.btn--light-no-border.block-products__link(href=pages.catalog.href)
+          span.d-none.d-lg-flex= textLink
+          svg(width="36" height="15")
+            use(href="img/symbols.svg#icon-arrow-right")
+    if(hasSlider)
+      .swiper.block-products__slider(data-product-slider="")
+        .swiper-wrapper
+          block
+        .swiper-scrollbar.block-products__scrollbar
+    else
+      block
+    if(!!btnText)
+      footer.block-products__footer
+        a.btn.btn--dark= btnText

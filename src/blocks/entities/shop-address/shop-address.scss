@@ -1,0 +1,39 @@
+.shop-address {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.shop-address__content {
+  position: relative;
+
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 130%;
+
+  p {
+    margin-bottom: 4px;
+  }
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.shop-address__title {
+  color: $black;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  margin-bottom: 8px;
+}
+
+.shop-address__size {
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 140%;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}

@@ -1,0 +1,24 @@
+.page-about {
+  padding-top: 20px;
+  @media(min-width: $screen-lg) {
+    padding-top: 80px;
+  }
+}
+
+.page-about__card-content {
+  @media(min-width: $screen-lg) {
+    flex-direction: row-reverse;
+  }
+}
+
+.page-about__stack {
+  display: flex;
+  flex-direction: column;
+  gap: 80px;
+}
+
+.page-about__slogan {
+  max-width: 604px;
+  margin: 0 auto;
+  text-align: center;
+}

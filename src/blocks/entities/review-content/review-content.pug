@@ -1,0 +1,13 @@
+mixin review-content({name, label, list, data})
+  .review-content&attributes(attributes)
+    .review-content__grid
+      .review-content__col.order-xxl-1
+        +final-rating(data).review-content__rating
+      .review-content__col
+        h3.review-content__name= name
+        ul.review-content__list
+          each item in list
+            li.review-content__item
+              strong.review-content__label= item.label
+              .review-content__desc
+                p= item.text

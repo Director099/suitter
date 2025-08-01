@@ -1,0 +1,151 @@
+// В этом файле должны быть стили для БЭМ-блока modal, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+$font-family:                 -apple-system, BlinkMacSystemFont, 'Roboto', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', 'Arial', sans-serif !default;
+$font-family--headings:       $font-family !default;
+
+$font-size--h4:               18px !default;
+
+$line-height:                 1.5 !default;
+
+$screen-lg:                   992px !default;
+
+$opacity:                     0.7 !default;
+$transition-time:             0.3s !default;
+
+$z-index-modal:               100 !default;
+
+.modal {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  align-self: auto;
+  overflow: auto;
+  padding: 15px;
+  border-radius: 0;
+  z-index: $z-index-modal;
+  -webkit-overflow-scrolling: touch;
+
+  @media (min-width: $screen-lg) {
+    position: fixed;
+    right: 0;
+    left: initial;
+    width: 100%;
+    max-width: 527px;
+    border-radius: 0;
+    padding: 32px 40px 40px;
+  }
+
+  &__dialog {
+    position: relative;
+    margin: 0;
+    width: 100%;
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: #fff;
+    outline: 0;
+  }
+
+  &__header {
+    position: sticky;
+    flex-shrink: 0;
+    top: -15px;
+    left: 0;
+    right: 0;
+    background-color: $white;
+    margin: -15px -15px 15px;
+    padding: 11.5px 15px;
+    z-index: 9;
+    box-shadow: 0 4px 20px rgba($black,.08);
+
+    display: flex;
+    align-items: center;
+    justify-content:  space-between;
+    gap: 15px;
+
+    @media (min-width: $screen-lg) {
+      align-items: flex-start;
+      position: static;
+      box-shadow: none;
+      padding: 0;
+      margin: 0 0 40px;
+    }
+  }
+
+  &__title {
+    color: $black;
+    margin: 0;
+    //text-align: center;
+  }
+
+  &__close {
+    display: inline-block;
+    //position: absolute; // stylelint-disable-line  declaration-no-important
+    //top: 50%;
+    //left: 15px;
+    //transform: translateY(-50%);
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg width='22' height='21' viewBox='0 0 22 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1.66797 1.16669L20.3334 19.8321' stroke='%231E1E1E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M1.66662 19.8321L20.332 1.16669' stroke='%231E1E1E' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    flex-shrink: 0;
+
+    @media (min-width: $screen-lg) {
+      //left: initial;
+      //right: -100px;
+      //top: -50px;
+      //transform: initial;
+    }
+  }
+
+  &__body {
+    padding: 0 15px;
+    flex-grow: 1;
+  }
+
+  &__footer {
+    padding: 15px;
+    flex-shrink: 0;
+  }
+
+  &--open {
+
+    @media (min-width: $screen-lg) {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+
+.modal__text-basket {
+  color: $color-gray;
+  font-weight: 300;
+}
+
+.modal__info {
+  font-weight: 400;
+  line-height: 140%;
+  text-align: center;
+
+  a {
+    cursor: pointer;
+    color: inherit;
+    text-decoration: underline;
+  }
+}

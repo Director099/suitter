@@ -1,0 +1,53 @@
+mixin gift-card
+  - const cardImg = 'img/content/cert-card.jpg';
+  .gift-card(id="gift-card")
+    .gift-card__grid
+      .gift-card__main-slider
+        .swiper(data-thumbs-slider="")
+          .swiper-wrapper
+            each item, i in Array.from({length: 6})
+              .swiper-slide.gift-card__main-slide
+                img(src=cardImg alt="Сертификат")
+      section.gift-card__content
+        h2.main-title.gift-card__title Подарочная карта
+        .gift-card__thumbs-slider
+          h3.gift-card__sub-title Выберите оформление
+          .swiper(data-cert-card-slider="")
+            .swiper-wrapper
+              each item, i in Array.from({length: 6})
+                .swiper-slide.gift-card__slide
+                  img(src=cardImg alt="Сертификат")
+        +field-select({
+          attrs: {
+            name: 'btn-size',
+            "data-choices-select": ""
+          },
+          options: [
+            {
+              title: 'Выберите номинал',
+              value: "",
+            },
+            {
+              title: '500',
+            },
+            {
+              title: '1000',
+            },
+            {
+              title: '1500',
+            },
+          ],
+        })(data-select-cert="").field-select--choices
+        +or('или').gift-card__or
+        .gift-card__btns
+          +field-text({
+            mods: '',
+            val: '',
+            attrs: {
+              'data-number': '',
+              placeholder: 'Введите свою сумму',
+            }
+          })(data-input-cert="").gift-card__field
+          a.btn.btn--dark.gift-card__btn(href="#modal-gift" data-fancybox="") купить сертификат
+          p.gift-card__text-cert Сертификат The Suitter — это простой и элегантный способ подарить близкому человеку именно то, что ему подойдёт. Электронный сертификат можно оформить онлайн, а физический — приобрести в магазине. Какой бы формат вы ни выбрали, сертификат подойдёт для покупок в бутиках The Suitter и на сайте — действует на все коллекции без исключений. Вы можете выбрать готовый номинал или указать свою сумму, чтобы сделать подарок по-настоящему персональным. Сертификат не подлежит возврату или обмену на деньги.
+          +link-info({href: "#modal-terms-use", text: 'Условия использования', fancybox: ''})

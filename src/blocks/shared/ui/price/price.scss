@@ -1,0 +1,39 @@
+.price {
+  display: flex;
+  //justify-content: center;
+  align-items: flex-end;
+  gap: 4px;
+  margin: 0;
+}
+
+.price__text {
+  color: $black;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 140%;
+}
+
+.price__text--sale {
+  display: flex;
+  gap: 4px;
+  align-items: flex-end;
+  font-weight: 500;
+  color: $color-danger;
+
+  @media (min-width: $screen-lg) {
+    font-size: 15px;
+    line-height: 1;
+  }
+}
+
+.price__text--cut {
+  color: $color-gray;
+  text-decoration: line-through;
+}
+
+.price__percent {
+  color: $color-danger;
+  font-size: 12px;
+  line-height: 1.25;
+  font-weight: 500;
+}

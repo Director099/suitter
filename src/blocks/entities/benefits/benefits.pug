@@ -1,0 +1,10 @@
+mixin benefits({svg, desc, subText})
+  .benefits
+    //-.benefits__icon
+    //-  svg(width="33" height="33")
+    //-    use(href=`img/symbols.svg#icon-${svg}`)
+    .benefits__content
+      if(!!desc)
+        p.benefits__desc= desc
+      if(!!subText)
+        span.benefits__sub-text= subText

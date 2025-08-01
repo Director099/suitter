@@ -1,0 +1,25 @@
+.contact__logo {
+  margin-bottom: 18px;
+}
+
+.contact__link {
+  margin: 0;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 110%;
+
+  a {
+    color: inherit;
+  }
+}
+
+.contact__link--phone {
+  font-size: 20px;
+}
+
+.contact__content {
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+  margin-bottom: 18px;
+}

@@ -1,0 +1,126 @@
+-
+  const mediaSize = {
+    lg: 1024,
+  }
+
+  const numberPhone = {
+    href: 'tel:375336611110',
+    text: '+375 (33) 661-11-10'
+  }
+
+  const contactEmail = {
+    href: 'mailto:thesuitter@gmail.com',
+    text: 'thesuitter@gmail.com'
+  }
+
+  const contactSupport = {
+    href: 'mailto:support@thesuitter.com',
+    text: 'support@thesuitter.com'
+  }
+
+  const formFilelds = {
+    name: {
+      title: 'Имя',
+      helpText: 'Поле является обязательным',
+      attrs: {
+        placeholder: 'Имя',
+        type: "text",
+        "data-pristine-required-message": "Поле является обязательным"
+      }
+    },
+    surname: {
+      title: 'Фамилия',
+      helpText: 'Поле является обязательным',
+      attrs: {
+        placeholder: 'Фамилия',
+        type: 'text',
+        "data-pristine-required-message": "Поле является обязательным"
+      }
+    },
+    phone: {
+      title: 'Телефон',
+      helpText: 'Поле является обязательным',
+      attrs: {
+        placeholder: 'Телефон',
+        type: 'tel',
+        pattern: `/^\\+375[ -]?\\(?([234]\\d)\\)?[ -]?(\\d{3})[ -]?(\\d{2})[ -]?(\\d{2})$/`,
+        "data-pristine-pattern-message": "Поле является обязательным"
+      }
+    },
+    email: {
+      title: 'Email',
+      helpText: 'Поле является обязательным',
+      attrs: {
+        placeholder: 'Email',
+        type: "email",
+        "data-pristine-email-message": "Поле является обязательным"
+      }
+    },
+    birthday: {
+      title: 'Дата рождения',
+      helpText: 'Поле является обязательным',
+      attrs: {
+        placeholder: '01.01.1990',
+        type: "text",
+        "data-birthday": ""
+      }
+    },
+    password: {
+      title: 'Пароль',
+      helpText: 'Поле является обязательным',
+      attrs: {
+        id: 'psw',
+        type: "password",
+        placeholder: '12345678!”№%:,.;',
+        minlength: 3,
+        "data-pristine-minlength-message": 'Поле является обязательным'
+      }
+    },
+    reatryPassword: {
+      title: 'Подтвердите пароль',
+      attrs: {
+        type: "password",
+        placeholder: 'Подтвердите пароль',
+        "data-pristine-equals": '#psw',
+        "data-pristine-equals-message": 'Поле является обязательным'
+      }
+    },
+  }
+
+  allCatigorise = [
+    {
+      linkTitle: 'Верхняя одежда',
+    },
+    {
+      linkTitle: 'Пиджаки',
+    },
+    {
+      linkTitle: 'Брюки',
+    },
+    {
+      linkTitle: 'Жилеты',
+    },
+    {
+      linkTitle: 'Платья',
+    },
+    {
+      linkTitle: 'Юбки',
+    },
+    {
+      linkTitle: 'Рубашки',
+    },
+    {
+      linkTitle: 'Топы и футболки',
+    },
+    {
+      linkTitle: 'Худи',
+    },
+    {
+      linkTitle: 'Трикотаж',
+    },
+    {
+      linkTitle: 'Аксессуары',
+    },
+  ]
+
+  const titleArticles = ["6 образов от Лии Руммо", "5 образов с пуховиками <br> THE SUITTER", "Интервью с основательницей бренда Дарьей Гончарук", "6 образов от Лии Руммо"]

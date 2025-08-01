@@ -1,0 +1,9 @@
+.size-table__grid {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+
+  @media (min-width: $screen-lg) {
+    flex-wrap: nowrap;
+  }
+}

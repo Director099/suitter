@@ -1,0 +1,34 @@
+-
+  const cardProduct = [
+    {
+      title: 'Пуховик Lime Short',
+      priceCurrent: "900"
+    },
+    {
+      title: 'Пуховик Lime Short',
+      priceCurrent: "900"
+    },
+    {
+      title: 'Пуховик Lime Short',
+      priceCurrent: "900"
+    },
+  ]
+
+mixin total-amount({hasDelete, hasPageBasket})
+  .total-amount&attributes(attributes)
+    .total-amount__goods
+      each item, i in cardProduct
+        +card-product({
+          folderImg: 1,
+          img: i + 1,
+          title: item.title,
+          priceSale: item.priceSale,
+          priceCurrent: item.priceCurrent,
+          hasDelete: hasDelete
+        })
+    footer.total-amount__footer
+      if(!!hasPageBasket)
+        button.btn.btn--dark.total-amount__btn(data-form-btn="") Оформить заказ
+      else
+        a.btn.btn--light.total-amount__btn(data-fancybox-close="" ) продолжить покупки
+        a.btn.btn--dark.total-amount__btn(href=pages.basketCheckout.href) перейти к оформлению

@@ -1,0 +1,43 @@
+.preview-community {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  min-height: 400px;
+
+  margin-left: -15px;
+  margin-right: -15px;
+  padding: 15px;
+
+  text-align: center;
+
+  background-color: $color-light;
+
+  &--image {
+    background-image: url("../img/decor/bg-community.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: $white;
+  }
+
+  @media (min-width: $screen-lg) {
+    min-height: 700px;
+    margin-left: -40px;
+    margin-right: -40px;
+  }
+}
+
+.preview-community__description {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 114%;
+
+  margin: 0;
+}
+
+.preview-community__btn {
+  background-color: $bg-color;
+  border-color: $bg-color;
+}

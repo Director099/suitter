@@ -1,0 +1,11 @@
+mixin range
+  .range&attributes(attributes)
+    .range__slider(id="slider-range")
+    .range__row
+      label.range__label
+        span.range__text от
+        input.range__input(type="number" id="input-range-0")
+      label.range__label
+        span.range__text до
+        input.range__input(type="number" id="input-range-1")
+

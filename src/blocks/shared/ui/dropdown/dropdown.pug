@@ -1,0 +1,26 @@
+//- Все примеси в этом файле должны начинаться c имени блока (dropdown)
+
+mixin dropdown({text, attrs})
+
+  //- Вызов:
+        +dropdown({
+          text: 'Показывать по 9',
+          attrs: {
+            class: 'btn--b-white'
+          }
+        })
+          .menu
+            span.menu__item
+              a.menu__link(href='') Пункт списка
+            span.menu__item
+              a.menu__link(href='') Пункт меню весьма длинный
+            span.menu__item
+              a.menu__link(href='') Второй пункт
+
+  span.dropdown&attributes(attributes)
+    button.dropdown__toggler(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')&attributes(attrs)
+      svg(width="24", height="24")
+        use(href="img/symbols.svg#icon-sorting")
+      span.d-none.d-lg-block!= text
+    span.dropdown__menu(aria-labelledby=id)
+      block

@@ -1,0 +1,11 @@
+mixin block-radio({idxChecked, name, title, price, text})
+  label.block-radio&attributes(attributes)
+    input.block-radio__input(type="radio", name=name checked= idxChecked === 0)
+    span.block-radio__toggle
+      svg.block-radio__svg(width="40" height="40")
+        use(href="img/symbols.svg#icon-check")
+      span.block-radio__wrap
+        span.block-radio__title= title
+        span.block-radio__price= price
+        if(!!text)
+          span.block-radio__text= text

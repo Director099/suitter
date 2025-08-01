@@ -1,0 +1,105 @@
+mixin modal-gift
+  -
+    const listField = [
+      formFilelds.name,
+      formFilelds.email,
+      {
+        isTextarea: true,
+        attrs: {
+          placeholder: 'Сообщение',
+          type: "text",
+        }
+      },
+    ]
+
+    const listToSend = [
+      {
+        title: "От кого сертификат",
+        attrs: {
+          placeholder: 'ФИО',
+          type: "text",
+        }
+      },
+      formFilelds.email,
+    ]
+
+  +modal({
+    id: 'modal-gift',
+    title: "Оформление"
+  }).modal-gift
+    +bonus-card.modal-gift__bonus
+    +tab-filter({
+      list: [
+        {
+          text: 'Отправить мне',
+          filter: 'for-me',
+          active: true
+        },
+        {
+          text: 'Отправить получателю',
+          filter: 'send-to-recipient'
+        }
+      ]
+    }).tab-filter--modal.modal-gift__list-filter
+      .modal-gift__tab(data-filter="for-me")
+        form.modal-gift__fieldset(method="POST" data-form="")
+          input.d-none(type="text" data-input-value-cert="" value="500")
+          .modal-gift__stack
+            strong.modal-gift__legend Введите ваш email, чтобы отправить сертификат лично
+            +field-text({
+              attrs: {
+                placeholder: formFilelds.email.attrs.placeholder,
+                required: true,
+                type: formFilelds.email.attrs.type,
+                'data-pristine-required-message': " ",
+                'data-pristine-email-message': formFilelds.email.attrs["data-pristine-email-message"],
+              }
+            })
+          button.btn.btn--dark.modal-gift__btn(disabled, data-form-btn="") перейти к оплате
+      .modal-gift__tab(data-filter="send-to-recipient")
+        form.modal-gift__fieldset(method="POST" data-form="")
+          input.d-none(type="text" data-input-value-cert="" value="500")
+          .modal-gift__stack
+            strong.modal-gift__legend Для кого сертификат
+            each item in listField
+              +field-text({
+                isTextarea: item.isTextarea,
+                attrs: {
+                  placeholder: item.attrs.placeholder,
+                  required: true,
+                  type: item.attrs.type,
+                  minlength: item.attrs.minlength,
+                  min: item.attrs.min,
+                  pattern: item.attrs.pattern,
+                  "data-pristine-required-message": "Поле является обязательным",
+                  'data-pristine-minlength-message': item.attrs['data-pristine-minlength-message'],
+                  'data-pristine-min-message': item.attrs['data-pristine-min-message'],
+                  'data-pristine-pattern-message': item.attrs['data-pristine-pattern-message'],
+                  "data-number-only": item.attrs['data-number-only'],
+                  "data-pristine-email-message": item.attrs["data-pristine-email-message"],
+                  "data-pristine-equals-message": item.attrs["data-pristine-equals-message"],
+                  "data-pristine-equals": item.attrs["data-pristine-equals"]
+                }
+              })
+            strong.modal-gift__legend От кого сертификат
+            each item in listToSend
+              +field-text({
+                isTextarea: item.isTextarea,
+                attrs: {
+                  placeholder: item.attrs.placeholder,
+                  required: true,
+                  type: item.attrs.type,
+                  minlength: item.attrs.minlength,
+                  min: item.attrs.min,
+                  pattern: item.attrs.pattern,
+                  "data-pristine-required-message": "Поле является обязательным",
+                  'data-pristine-minlength-message': item.attrs['data-pristine-minlength-message'],
+                  'data-pristine-min-message': item.attrs['data-pristine-min-message'],
+                  'data-pristine-pattern-message': item.attrs['data-pristine-pattern-message'],
+                  "data-number-only": item.attrs['data-number-only'],
+                  "data-pristine-email-message": item.attrs["data-pristine-email-message"],
+                  "data-pristine-equals-message": item.attrs["data-pristine-equals-message"],
+                  "data-pristine-equals": item.attrs["data-pristine-equals"]
+                }
+              })
+          button.btn.btn--dark.modal-gift__btn(disabled, data-form-btn="") перейти к оплате

@@ -1,0 +1,5 @@
+mixin promo-blocks(list)
+  .promo-blocks.grid-tpl-1(class=list.length > 1 ? 'grid-tpl-lg-2' : '')&attributes(attributes)
+    each item, i in list
+      a.promo-blocks__link(href=pages.catalog.href class=firstElem)
+        img(src=`img/content/promo-${item}.jpg` alt="Summer Sale")

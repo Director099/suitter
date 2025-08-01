@@ -1,0 +1,36 @@
+.blog-preview {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  color: inherit;
+}
+
+.blog-preview__info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-right: 10px;
+}
+
+.blog-preview__header img {
+  width: 100%;
+}
+
+.blog-preview__title {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 114%;
+  margin: 0;
+
+  @media(min-width: $screen-lg) {
+    font-size: 18px; // На мобилке длинные слова не вмещаются
+  }
+}
+
+.blog-preview__name {
+  display: block;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 114%;
+}

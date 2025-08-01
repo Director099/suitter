@@ -1,0 +1,25 @@
+.payment {
+  @include ul-none;
+  display: flex;
+  gap: 8px;
+  max-width: 304px;
+  width: 100%;
+}
+
+.payment__item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 30px;
+  border: 1px solid $color-light-gray;
+  border-radius: 3px;
+  padding: 5px;
+
+  img {
+    display: block;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+  }
+}

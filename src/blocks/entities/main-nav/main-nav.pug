@@ -1,0 +1,29 @@
+include ./mock
+
+mixin main-nav
+  ul.main-nav&attributes(attributes)
+    each itemMenu in mainNav
+      - const hasAttribute = !!itemMenu.subItemColumns;
+      - const mainLink = !!itemMenu.href ? itemMenu.href : pages.catalog.href;
+      - const targetBlank = !!itemMenu.target ? "_blank" : false;
+      li.main-nav__item(data-has-hover=hasAttribute ? true : false)
+        a.main-nav__link(href=mainLink, target=targetBlank)= itemMenu.mainItem
+        if(hasAttribute)
+          .main-nav__submenu
+            .main-nav__row
+              each container in itemMenu.subItemColumns
+                .main-nav__group
+                  strong.main-nav__title=container.subTitle
+                  ul.main-nav__column
+                    each subMenu in container.list
+                      li.main-nav__column-item
+                        a.main-nav__sub-link(href=pages.catalog.href class=subMenu.linkModified)
+                          span= subMenu.linkTitle
+                  a.main-nav__group-link(href=pages.catalog.href)
+                    svg(width="36" height="15")
+                      use(href="img/symbols.svg#icon-arrow-right")
+              .main-nav__previews.grid-tpl-lg-2.grid-tpl-xl-4
+                +preview({})
+                +preview({})
+                +preview({})
+                +preview({})

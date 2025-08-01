@@ -1,0 +1,19 @@
+include ./mock
+
+mixin modal-menu
+  +modal({
+    id: 'modal-menu',
+    tplHeader: `
+      <a class="logo" href="index.html">
+        <img src="img/content/logo.svg" alt="Suitter" width="147" height="20">
+      </a>
+    `
+  }).modal-menu
+    +accordion({
+      list: modalMenu,
+      firstActive: true,
+    })(data-single="").modal__accordion
+    each item in menuLink
+      +link-info({href: item.href, text: item.text}).modal-menu__link
+    a.modal-menu__user-link(data-fancybox="" href="#modal-entry") Вход/Регистрация
+    +contact.modal-menu__contact

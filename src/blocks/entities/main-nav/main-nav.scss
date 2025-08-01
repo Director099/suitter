@@ -1,0 +1,145 @@
+@import "data-has-hover";
+
+.main-nav {
+  @include ul-none;
+
+  display: flex;
+  height: 100%;
+}
+
+.main-nav__item {
+  position: relative;
+  z-index: 1;
+  height: 100%;
+  padding: 0 20px;
+}
+
+.main-nav__item:hover .main-nav__link::after {
+  opacity: 1;
+}
+
+.main-nav__item:hover .main-nav__submenu {
+  opacity: 1;
+  z-index: 1;
+  visibility: visible;
+}
+
+.main-nav__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  color: $text-color;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1;
+  text-transform: uppercase;
+  white-space: nowrap;
+
+  &::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    display: block;
+    bottom: 25%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: $text-color;
+    z-index: 2;
+    transition: opacity $time ease-in-out;
+    opacity: 0;
+  }
+}
+
+.main-nav__submenu {
+  position: fixed;
+  top: $lgHeightHeader;
+  left: 0;
+  width: 100%;
+  max-height: calc(100vh - #{$lgHeightHeader});
+  background-color: $white;
+  overflow-y: auto;
+
+  padding: 21px 40px 51px 40px;
+
+  opacity: 0;
+  z-index: -1;
+  visibility: hidden;
+}
+
+.main-nav__group {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.main-nav__title {
+  display: block;
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 114%;
+  text-transform: uppercase;
+
+  color: #ADADAD;
+}
+
+.main-nav__row {
+  display: grid;
+  grid-template-columns: 140px 140px 1fr;
+  gap: 0 90px;
+}
+
+.main-nav__column {
+  @include ul-none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.main-nav__previews {
+  @media(min-width: $screen-lg) {
+    gap: 10px;
+  }
+
+  @media(min-width: $screen-xl) {
+    gap: 10px;
+  }
+}
+
+.main-nav__sub-link {
+  display: inline-block;
+
+  color: $text-color;
+
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 110%;
+  text-transform: uppercase;
+
+  transition: color $time;
+
+  &--sale {
+    color: $color-danger;
+  }
+
+  &--head {
+    margin-bottom: 16px;
+    font-size: 13px;
+    font-weight: 500;
+    text-transform: uppercase;
+  }
+
+  &--dashed {
+    margin-top: 2px;
+  }
+
+  &--dashed span {
+    border-bottom: 1px dashed;
+    line-height: 1.3;
+  }
+
+  &:hover {
+    color: $color-gray;
+  }
+}

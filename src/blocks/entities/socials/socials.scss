@@ -1,0 +1,14 @@
+.socials {
+  @include ul-none;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.socials__link {
+  display: block;
+
+  svg {
+    display: block;
+  }
+}

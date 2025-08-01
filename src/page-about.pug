@@ -1,0 +1,39 @@
+extends pug/layout.pug
+
+block var
+  - const pageCurrent = pages.pageAbout.href
+
+block meta
+  title= pages.pageAbout.text
+block header
+  +page-header({})
+block content
+  .page-about
+    .page-about__stack
+      //.page-about__row
+      //  .page-about__pick
+      //    img(src="img/content/page-about.jpg" alt="Простота. Индивидуальность. Качество.")
+      //  section.page-about__main-content
+      //    h1.main-title.page-about__title Простота. Индивидуальность. Качество.
+      //    p это капсульный гардероб, где каждая вещь создана для вашего комфорта и самовыражения. Мы проектируем лаконичные модели с идеальным кроем, которые легко сочетаются между собой, экономя ваше время и подчеркивая уникальность.
+      +card-content({
+        title: 'Простота. Индивидуальность. Качество.',
+        img: 'img/content/page-about.jpg'
+      }).page-about__card-content
+        p это капсульный гардероб, где каждая вещь создана для вашего комфорта и самовыражения. Мы проектируем лаконичные модели с идеальным кроем, которые легко сочетаются между собой, экономя ваше время и подчеркивая уникальность.
+
+      +advatages("Наш секрет — в деталях:").advantages--title-center
+        +card-info("Продуманные сеты").advantages__card
+          p готовые решения для любого повода
+        +card-info("Натуральные ткани и точный крой").advantages__card
+          p для долговечности и легкости
+        +card-info("Cвобода самовыражения").advantages__card
+          p без компромиссов в стиле
+      h2.main-title.page-about__slogan Мы верим, #[br] что мода должна вдохновлять, а не усложнять
+      +preview-community({
+        title: "Станьте частью комьюнити the suitter",
+        description: 'Откройте доступ к миру качественного выбора и особых привилегий',
+        textLink: 'Стать участником',
+      }).preview-community--image
+block footer
+  +page-footer()

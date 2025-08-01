@@ -1,0 +1,124 @@
+.block-products {
+  overflow: hidden;
+  margin: 0 -15px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @media (min-width: $screen-lg) {
+    margin: 0 -40px;
+    padding: 0 40px;
+  }
+}
+
+.block-products__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 16px;
+
+  @media (min-width: $screen-lg) {
+    margin-bottom: 40px;
+  }
+}
+
+.block-products__slider {
+  overflow: visible;
+}
+
+.block-products__sub-title {
+  text-align: center;
+  font-weight: 300;
+  font-size: 12px;
+  line-height: 16px;
+
+  margin-top: 8px;
+  margin-bottom: 0;
+
+  @media (min-width: $screen-lg) {
+    font-size: 14px;
+    line-height: 22px;
+    margin-top: 16px;
+  }
+
+}
+
+.block-products__list {
+  @media (max-width: $screen-lg - 1) {
+    gap: 8px;
+    display: flex;
+    padding: 0 15px;
+    overflow: auto;
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.block-products__list-blog {
+  gap: 12px 0;
+
+  @media (min-width: $screen-lg) {
+    gap: 12px 0;
+  }
+}
+
+.block-products__footer {
+  text-align: center;
+  margin-top: 18px;
+  padding: 0 15px;
+}
+
+.block-products__btn {
+  text-transform: uppercase;
+  letter-spacing: 1.4px;
+  padding: 0 24px;
+  font-size: 14px;
+  line-height: 44px;
+
+  @media (min-width: $screen-lg) {
+    font-size: 16px;
+    line-height: 50px;
+    padding: 0 32px;
+  }
+}
+
+.block-products__preview {
+  width: 75vw;
+  max-width: 312px;
+  flex-shrink: 0;
+
+  @media (min-width: $screen-lg) {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.block-products__link {
+  padding: 3.5px 0;
+}
+
+.block-products__scrollbar {
+  display: none;
+  position: static !important;
+  width: 100% !important;
+  margin-top: 29px;
+
+  height: 3px !important;
+  background: rgba($color-gray, 10%);
+
+  .swiper-scrollbar-drag {
+    background-color: $text-color;
+  }
+
+  @media (min-width: $screen-lg) {
+    display: block;
+  }
+}
+
+.page-community__table .block-products__header {
+ @media (min-width: $screen-lg) {
+   margin-bottom: 54px;
+ }
+}

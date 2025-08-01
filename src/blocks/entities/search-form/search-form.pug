@@ -1,0 +1,14 @@
+mixin search-form
+  form.search-form&attributes(attributes)(action="#" data-search="")
+    button.search-form__btn(type="button" data-btn-search="")
+      svg(width="17", height="17")
+        use(href="img/symbols.svg#icon-search")
+    +field-text({
+      mods: '',
+      val: '',
+      attrs: {
+        placeholder: 'Поиск',
+        "data-autocomplite": "",
+      }
+    }).search-form__field
+    button.search-form__close(data-close-search="" type="button") Закрыть

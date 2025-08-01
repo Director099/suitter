@@ -1,0 +1,9 @@
+mixin main-block({title, text, btnText, btnHref, isImg})
+  .main-block&attributes(attributes)
+    section.main-block__content
+      h1.main-title.main-block__title= title
+      .main-block__description
+        p.main-block__tagline= text
+        a.btn.btn--light.main-block__btn(href=btnHref)= btnText
+    if(isImg)
+      img.d-none.d-lg-block(src="img/content/main-block-community.png" alt=title)

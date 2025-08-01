@@ -1,0 +1,56 @@
+.steps-tab__list {
+  @include ul-none;
+  display: flex;
+  border-bottom: 1px solid $color-gray;
+  margin: 0 -15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  overflow: auto;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (min-width: $screen-lg) {
+    padding: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+.steps-tab__item {
+  flex-grow: 1;
+  text-align: center;
+}
+
+.steps-tab__link {
+  position: relative;
+  display: block;
+  padding: 0 10px 23px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: 0.1px;
+  text-transform: uppercase;
+  color: $color-gray;
+  white-space: nowrap;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: transparent;
+  }
+}
+
+.steps-tab__link.active {
+  color: $text-color;
+
+  &::after {
+    background-color: $bg-color;
+  }
+}

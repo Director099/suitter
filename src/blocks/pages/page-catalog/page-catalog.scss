@@ -1,0 +1,146 @@
+.page-catalog--full-size {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.page-catalog__header {
+  margin-bottom: 40px;
+}
+
+.page-catalog__title {
+  line-height: 114%;
+}
+
+.page-catalog__counter {
+  font-weight: 100;
+  margin-left: 5px;
+}
+
+.page-catalog__dropdown .dropdown__toggler {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4.5px 0;
+  font-size: 14px;
+  line-height: 1;
+  color: inherit;
+  text-align: right;
+  text-transform: uppercase;
+
+  &::after {
+    display: none;
+  }
+}
+
+.page-catalog__dropdown .dropdown__menu {
+  left: inherit;
+  right: 0;
+}
+
+.page-catalog__grid {
+  position: relative;
+  margin-left: -15px;
+  margin-right: -15px;
+
+  @media (min-width: $screen-lg) {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 28px;
+    margin: 0;
+    align-items: flex-start;
+  }
+}
+
+.page-catalog__gap {
+  gap: 20px 4px;
+
+  @media (min-width: $screen-lg) {
+    gap: 34px 12px;
+  }
+
+  @media (min-width: $screen-xl) {
+    gap: 34px 12px;
+  }
+}
+
+.page-catalog__row {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.page-catalog__col {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.page-catalog__category {
+  @include ul-none;
+  display: flex;
+  margin-top: 20px;
+  overflow: auto;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-left: 15px;
+  padding-right: 15px;
+  gap: 8px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (min-width: $screen-lg) {
+    flex-wrap: wrap;
+  }
+}
+
+.page-catalog__category-item {
+  flex-shrink: 0;
+}
+
+.page-catalog__content {
+  display: flex;
+  flex-direction:  column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+  padding: 0 0 40px;
+  max-width: 620px;
+  margin: 0 auto;
+  text-align: center;
+  gap: 40px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+
+  p {
+    margin: 0;
+  }
+}
+
+.page-catalog__btn-link {
+  width: 100%;
+  max-width: 447px;
+  justify-content: center;
+}
+
+.page-catalog__articles {
+  gap: 12px 0;
+
+  @media (min-width: $screen-lg) {
+    gap: 40px 0;
+  }
+
+  @media (min-width: $screen-xl) {
+    gap: 40px 0;
+  }
+}
+
+.page-catalog__show-more {
+  @media (min-width: $screen-lg) {
+    margin: 63px auto 79px;
+  }
+}

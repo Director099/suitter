@@ -1,0 +1,5 @@
+mixin preview-community({title, description, textLink, btnMod=darken})
+  section.preview-community&attributes(attributes)
+    h3.main-title.preview-community__title= title
+    p.preview-community__description= description
+    a.btn.btn--dark.preview-community__btn(href=pages.pageСommunity.href)= textLink

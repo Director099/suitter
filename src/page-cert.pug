@@ -1,0 +1,75 @@
+extends pug/layout.pug
+
+block var
+  - const pageCurrent = pages.pageCert.href
+
+  -
+    const listJobs = [
+      {
+        text: 'Выбираете номинал и оформляете сертификат',
+      },
+      {
+        text: 'Указываете email получателя — мы отправим подарочную карту сразу после оплаты',
+      },
+      {
+        text: 'Получатель использует сертификат при покупке в The Suitter',
+      },
+    ]
+
+    const listAdv = [
+      {
+        title: 'Без срока действия',
+        text: 'можно использовать в любое время',
+      },
+      {
+        title: 'Гибкий номинал',
+        text: 'подберите сумму, которая подходит именно вам',
+      },
+      {
+        title: 'Оплата онлайн и офлайн',
+        text: 'покупки в интернет-магазине и в фирменных точках',
+      },
+      {
+        title: 'Мгновенная доставка',
+        text: 'электронный сертификат придет на email сразу после оплаты',
+      },
+    ]
+
+block meta
+  title= pages.pageCert.text
+block header
+  +page-header({})
+block content
+  .page-cert
+    +main-block({
+      title: 'Подарите свободу выбора с сертификатом The Suitter',
+      text: 'Выбирая подарочный сертификат The Suitter, вы дарите не просто вещь, а возможность создать идеальный образ. Пусть ваши близкие сами решат, что им больше по душе\n',
+      btnText: 'сделать подарок',
+      btnHref: '#gift-card'
+    })
+  +block-products({
+    title: 'Почему сертификат The Suitter — идеальный подарок?',
+    hasSlider: false
+  })
+    .page-cert__gap.swipe-list.grid-tpl-lg-4
+      each item, i in listAdv
+        +step-block({
+          title: `Шаг ${i + 1}`,
+          text: item.text,
+        }).step-block--advantages
+  +block-products({
+    title: 'Как это работает?',
+    hasSlider: false
+  })
+    .page-cert__gap.swipe-list.grid-tpl-lg-3
+      each item, i in listJobs
+        +step-block({
+          title: `Шаг ${i + 1}`,
+          text: item.text,
+        })
+    ul.page-cert__list-info
+      li Сертификат не подлежит возврату или обмену на деньги.
+      li Действует на все коллекции The Suitter.
+  +gift-card
+block footer
+  +page-footer()

@@ -1,0 +1,42 @@
+- const colorProduct = ['000', '684130', 'EFF497', 'DEEFF4'];
+
+mixin product-content({title, list})
+  .product-content
+    header.product-content__header
+      h1.main-title.product-content__title= title
+      .product-content__price
+        span.product-content__price-text= `900 BYN`
+    .product-content__colors-group
+      .product-content__colors-grid
+        each item, i in colorProduct
+          a.product-content__color-link(href="#" style=`background-color: #${item}` class=i === 2 && 'active')
+      h3.product-content__colors-text Лаймовый
+    +field-select({
+      attrs: {
+        name: 'btn-size',
+        "data-choices-select": ""
+      },
+      options: list,
+    }).field-select--choices
+    .product-content__form-btn
+      button.btn.btn--dark.product-content__btn-basket(data-fancybox="" data-src="#modal-basket") Добавить в корзину
+      +link-icon({
+        svg: 'heart',
+        width: 32,
+        height: 32,
+      }).product-content__link-icon
+    .product-content__group
+      +accordionParent(data-single="").product-content__accordion
+        +accordionItem({
+          title: 'Описание'
+        })
+          ul.product-content__content-list
+            li Артикул:
+              +copy('0180')
+            li Параметры модели: 177/81/62/90
+            li Размер на модели: S
+          p Укороченный тёплый пуховик из гусиного пуха, который сохранит тепло даже при -25°C...
+      +link-info({href: "#modal-size-table", text: 'Таблица размеров', fancybox: ''})
+      +link-info({href: "#modal-size-table", text: 'Размерная сетка и обмеры изделия', fancybox: ''})
+      +link-info({href: "#modal-content", text: 'Состав и уход', fancybox: ''})
+      +link-info({href: "#modal-shop", text: 'Наличие в магазинах', fancybox: ''})

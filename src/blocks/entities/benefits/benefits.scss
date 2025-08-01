@@ -1,0 +1,34 @@
+.benefits {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 1.5;
+  color: $black;
+}
+
+.benefits__icon {
+  display: flex;
+  width: 36px;
+  flex-shrink: 0;
+
+  svg {
+    width: 100%;
+    fill: $color-gray;
+  }
+}
+
+.benefits__desc {
+  margin: 0;
+}
+
+.benefits__sub-text {
+  display: block;
+  margin-bottom: 0;
+  color: $color-gray;
+  font-size: 12px;
+  font-weight: 300;
+  line-height: 16px;
+}

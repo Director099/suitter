@@ -1,0 +1,123 @@
+// В этом файле должны быть стили для БЭМ-блока field-text, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+$gray-lighter:                hsl(0, 0%, 80%) !default;
+$border-color:                hsl(0, 0%, 60%) !default;
+
+$text-color--muted:           hsl(0, 0%, 50%) !default;
+
+$line-height:                 1.5 !default;
+
+$field-padding-vertical:      0.3em !default;
+$field-padding-horizontal:    0.7em !default;
+
+$border-radius:               3px !default;
+
+.field-text {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: block;
+
+  &__name {
+    margin-bottom: 10px;
+    display: block;
+    color: #595959;
+    font-size: 14px;
+    font-weight: 300;
+  }
+
+  &__input-wrap {
+    position: relative;
+    display: block;
+  }
+
+  &__input {
+    vertical-align: middle;
+    margin: 0;
+    font-family: inherit;
+    appearance: textfield;
+
+    position: relative;
+    display: block;
+    width: 100%;
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 300;
+    letter-spacing: .2px;
+    min-height: 50px;
+    padding: 14.5px 16px;
+    background-color: $color-light;
+    //border: none;
+    border: 1px solid #E4E4E4;
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    transition: border-color .2s linear;
+
+    &:focus {
+      @include field-focus;
+    }
+
+    &[disabled],
+    &[readonly] {
+      cursor: default;
+      background-color: $gray-lighter;
+    }
+
+    &[type='search']::-webkit-search-cancel-button,
+    &[type='search']::-webkit-search-decoration {
+      -webkit-appearance: none; // stylelint-disable-line  property-no-vendor-prefix
+    }
+
+    &[type='number']::-webkit-inner-spin-button,
+    &[type='number']::-webkit-outer-spin-button {
+      // height: auto;
+    }
+
+    &[type='color'] {
+      // max-width: 100px;
+      padding: 0;
+    }
+
+    &::placeholder {
+      color: $text-color--muted;
+      opacity: 1;
+    }
+
+    @at-root textarea#{&} {
+
+      height: auto;
+      min-height: 110px;
+      resize: vertical;
+    }
+  }
+}
+
+.field-text__btn-password {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 70px;
+  margin: 2px;
+  border-radius: 10px;
+  background-color: $color-light;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml,%3Csvg width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.5 7.79688C12.1026 7.80309 11.708 7.86623 11.3285 7.98438C11.5041 8.29313 11.5975 8.64172 11.6 8.99688C11.6 9.27266 11.5457 9.54574 11.4402 9.80052C11.3346 10.0553 11.1799 10.2868 10.9849 10.4818C10.7899 10.6768 10.5584 10.8315 10.3036 10.937C10.0489 11.0426 9.77578 11.0969 9.50001 11.0969C9.14485 11.0944 8.79625 11.0009 8.4875 10.8254C8.24392 11.6702 8.27231 12.5702 8.56865 13.398C8.865 14.2257 9.41428 14.9393 10.1387 15.4375C10.8631 15.9358 11.7259 16.1935 12.6049 16.1741C13.4839 16.1547 14.3346 15.8593 15.0363 15.3296C15.7381 14.8 16.2554 14.0629 16.515 13.2229C16.7746 12.3829 16.7633 11.4825 16.4828 10.6492C16.2022 9.81599 15.6666 9.09213 14.9518 8.5802C14.237 8.06827 13.3792 7.79423 12.5 7.79688ZM23.1695 11.4494C21.1359 7.4815 17.1099 4.79688 12.5 4.79688C7.89013 4.79688 3.863 7.48338 1.83049 11.4498C1.74471 11.6195 1.70001 11.8069 1.70001 11.9971C1.70001 12.1872 1.74471 12.3747 1.83049 12.5444C3.86412 16.5123 7.89013 19.1969 12.5 19.1969C17.1099 19.1969 21.137 16.5104 23.1695 12.544C23.2553 12.3743 23.3 12.1868 23.3 11.9967C23.3 11.8066 23.2553 11.6191 23.1695 11.4494ZM12.5 17.3969C8.80063 17.3969 5.40912 15.3344 3.57762 11.9969C5.40912 8.65938 8.80025 6.59688 12.5 6.59688C16.1998 6.59688 19.5909 8.65938 21.4224 11.9969C19.5913 15.3344 16.1998 17.3969 12.5 17.3969Z' fill='%23CBCBCB'/%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M22.759 4.34932C23.1226 4.76496 23.0805 5.39672 22.6649 5.7604L4.97004 21.2434C4.55441 21.6071 3.92264 21.565 3.55896 21.1493C3.19528 20.7337 3.2374 20.1019 3.65303 19.7382L21.3479 4.25525C21.7635 3.89157 22.3953 3.93368 22.759 4.34932Z' fill='%23CBCBCB' stroke='white' stroke-linecap='round'/%3E%3C/svg%3E%0A");
+
+  &--open {
+    background-image: url("data:image/svg+xml,%3Csvg width='25' height='24' viewBox='0 0 25 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.3 8.00001C11.9025 8.00622 11.508 8.06936 11.1285 8.18751C11.3041 8.49625 11.3975 8.84485 11.4 9.20001C11.4 9.47578 11.3457 9.74886 11.2401 10.0036C11.1346 10.2584 10.9799 10.4899 10.7849 10.6849C10.5899 10.8799 10.3584 11.0346 10.1036 11.1402C9.84885 11.2457 9.57577 11.3 9.29999 11.3C8.94483 11.2975 8.59624 11.2041 8.28749 11.0285C8.0439 11.8733 8.07229 12.7733 8.36864 13.6011C8.66499 14.4289 9.21427 15.1424 9.93868 15.6407C10.6631 16.1389 11.5259 16.3966 12.4049 16.3772C13.2839 16.3579 14.1345 16.0624 14.8363 15.5328C15.5381 15.0031 16.0554 14.2661 16.315 13.426C16.5746 12.586 16.5633 11.6856 16.2828 10.8524C16.0022 10.0191 15.4666 9.29525 14.7518 8.78333C14.037 8.2714 13.1792 7.99735 12.3 8.00001ZM22.9695 11.6525C20.9359 7.68463 16.9099 5 12.3 5C7.69012 5 3.66298 7.68651 1.63048 11.6529C1.5447 11.8226 1.5 12.0101 1.5 12.2002C1.5 12.3903 1.5447 12.5778 1.63048 12.7475C3.66411 16.7154 7.69012 19.4 12.3 19.4C16.9099 19.4 20.937 16.7135 22.9695 12.7471C23.0553 12.5774 23.1 12.39 23.1 12.1998C23.1 12.0097 23.0553 11.8222 22.9695 11.6525ZM12.3 17.6C8.60062 17.6 5.20911 15.5375 3.37761 12.2C5.20911 8.86251 8.60024 6.8 12.3 6.8C15.9998 6.8 19.3909 8.86251 21.2224 12.2C19.3913 15.5375 15.9998 17.6 12.3 17.6Z' fill='%23828282'/%3E%3C/svg%3E%0A")
+  }
+}
+
+.field-text__help-text {
+  display: block;
+  margin-top: 4px;
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: 300;
+  color: $color-gray;
+}

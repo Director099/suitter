@@ -1,0 +1,7 @@
+mixin tag({text, tagName=span})
+  if(tagName === 'a')
+    a.tag&attributes(attributes)= text
+      block
+  if(tagName === 'span')
+    a.tag&attributes(attributes)= text
+      block

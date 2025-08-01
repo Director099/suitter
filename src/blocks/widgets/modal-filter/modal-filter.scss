@@ -1,0 +1,53 @@
+.modal-filter {
+  overflow-x: hidden;
+
+  //@media (min-width: $screen-lg) {
+  //  position: fixed;
+  //  right: 0;
+  //  left: initial;
+  //  max-width: 460px;
+  //  border-radius: 0;
+  //  padding: 32px 40px 40px;
+  //}
+
+  //.modal__header {
+  //  margin-bottom: 0;
+  //
+  //  @media (min-width: $screen-lg) {
+  //    margin-bottom: 30px;
+  //  }
+  //}
+}
+
+.modal-filter .modal__dialog,
+.modal-filter .modal__content {
+  position: static;
+  height: 100%;
+}
+
+.modal-filter__form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.modal-filter__item {
+  margin-bottom: -1px;
+}
+
+.modal-filter__btn {
+  padding-bottom: 2px;
+  text-transform: none;
+  margin-bottom: 34px;
+  align-self: flex-start;
+}
+
+.modal-filter__send {
+  width: 100%;
+}
+
+.modal-filter__list {
+  @include ul-none;
+  flex-grow: 1;
+  margin-bottom: 35px;
+}

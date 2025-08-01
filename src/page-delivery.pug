@@ -1,0 +1,51 @@
+extends pug/layout.pug
+
+block var
+  - const pageCurrent = pages.pageDelivery.href
+
+block meta
+  title= pages.pageDelivery.text
+block header
+  +page-header({})
+block content
+  .delivery-and-return
+    +stepsTab([
+      {
+        text: 'Доставка и оплата',
+        href: pages.pageDelivery.href,
+        active: true
+      },
+      {
+        text: 'Возврат товара',
+        href: pages.pageReturn.href,
+      },
+    ]).delivery-and-return__steps
+    .delivery-and-return__content
+      +advatages("Доставка")
+        +card-info("По беларуси").advantages__card
+          p 1. Курьером:
+          ul
+            li Минск – 1-2 дня
+            li другие города – 2-3 дня
+          p 2. Самовывоз из нашего шоурума
+        +card-info("В россию и снг").advantages__card
+          p СДЭК/почта (от 3 до 10 дней)
+        +card-info("другие страны").advantages__card
+          p DHL/UPS (уточняйте сроки при заказе)
+      +advatages("Оплата")
+        +card-info("Онлайн").advantages__card
+          ul
+            li картой (Visa/Mastercard)
+            li Apple Pay
+            li Google Pay
+        +card-info("Наличными / Картой при получении").advantages__card
+          p (только для Беларуси)
+        +card-info("Рассрочка").advantages__card
+          p через [указать банки-партнеры]
+  +preview-community({
+    title: "Станьте частью комьюнити the suitter",
+    description: 'Откройте доступ к миру качественного выбора и особых привилегий',
+    textLink: 'Стать участником',
+  }).preview-community--image
+block footer
+  +page-footer()

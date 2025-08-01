@@ -1,0 +1,8 @@
+mixin step-block({title, text, tagText})
+  .step-block&attributes(attributes)
+    .step-block__column
+      if(!!tagText)
+        span.step-block__tag= tagText
+      h3.main-title.step-block__title= title
+      .step-block__desc
+        p= text

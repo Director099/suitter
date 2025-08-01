@@ -1,0 +1,5 @@
+mixin content-block(title)
+  section.content-block&attributes(attributes)
+    if(!!title)
+      h2.content-block__title!=title
+    block

@@ -1,0 +1,10 @@
+mixin contact(hiddenLogo)
+  section.contact&attributes(attributes)
+    if(!hiddenLogo)
+      +logo(pages.index.href, 220, 30).contact__logo
+    .contact__content
+      p.contact__link.contact__link--phone
+        a(href=numberPhone.href)= numberPhone.text
+      p.contact__link
+        a(href=contactEmail.href)= contactEmail.text
+    +socials

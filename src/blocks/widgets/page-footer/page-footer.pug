@@ -1,0 +1,28 @@
+include ./constans
+
+mixin page-footer()
+  - const hasDetails = (item) => item.details ? "content" : false
+  footer.page-footer
+    .page-footer__container
+      .page-footer__nav(data-accordion="parent" data-single="" data-destroy="(max-width: 1023px)")
+        .page-footer__nav-wrap.page-footer__nav-wrap--content
+          +contact
+        each item in footerNav
+          .page-footer__nav-wrap(data-accordion="element")
+            h3.page-footer__nav-title(data-accordion="button")= item.title
+            ul.page-footer__nav-list(data-accordion="content")
+              if(item.details)
+                li.page-footer__nav-item
+                  p.page-footer__nav-link.page-footer__nav-link--no-href!= item.details
+              each itemLinks in item.links
+                li.page-footer__nav-item
+                  a.page-footer__nav-link(href=itemLinks.href)
+                    if(itemLinks.href === pages.pageCert.href)
+                      svg(width="16" height="16")
+                        use(href=`img/symbols.svg#icon-gift`)
+                    =itemLinks.text
+    .page-footer__under
+      .page-footer__container
+        .page-footer__under-row
+          p 2025 THE SUITTER
+          img.page-footer__under-images(src="img/content/footer-banks.png" alt="Банки")

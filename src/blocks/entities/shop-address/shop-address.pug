@@ -1,0 +1,7 @@
+mixin shop-address({title, address, size})
+  .shop-address&attributes(attributes)
+    section.shop-address__content
+      h3.shop-address__title=title
+      p!=address
+      a(href=numberPhone.href)=numberPhone.text
+    strong.shop-address__size= size

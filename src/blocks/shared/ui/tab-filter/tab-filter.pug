@@ -1,0 +1,10 @@
+mixin tab-filter({list, listClass, destroy, textButton})
+  .tab-filter(data-tab-filter="" data-destroy=destroy)&attributes(attributes)
+    .tab-filter__header(class=listClass)
+      if textButton
+        span.tab-filter__drop-text(data-filter-drop-text="")= textButton
+      ul.tab-filter__list
+        each item in list
+          li.tab-filter__item
+            a.tab-filter__btn(class= `${item.active ? 'active' : ''}` data-btn-filter= item.filter)= item.text
+    block

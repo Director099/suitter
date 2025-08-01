@@ -1,0 +1,5 @@
+mixin tag-filter({title, iconClose})
+  a.tag-filter&attributes(attributes)= title
+    if(!!iconClose)
+      svg(width="24" height="24")
+        use(href="img/symbols.svg#icon-close")

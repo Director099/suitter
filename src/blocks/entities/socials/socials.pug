@@ -1,0 +1,23 @@
+-
+  const socials = [
+    {
+      icon: 'inst',
+      href: 'https://www.instagram.com/thesuitter',
+      width: 28,
+      height: 28
+    },
+    {
+      icon: 'tg',
+      href: '#',
+      width: 28,
+      height: 28
+    },
+  ]
+
+mixin socials
+  ul.socials&attributes(attributes)
+    each item in socials
+      li.socials__item
+        a.socials__link(href=item.href, target="_blank")
+          svg(width=item.width height=item.height)
+            use(href=`img/symbols.svg#icon-${item.icon}`)

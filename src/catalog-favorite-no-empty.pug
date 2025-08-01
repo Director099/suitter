@@ -1,0 +1,19 @@
+extends pug/layout.pug
+
+block meta
+  title= pages.catalogFavoriteNoEmpty.text
+block header
+  +page-header({})
+block content
+  +page-catalog({
+    title: pages.catalogFavoriteNoEmpty.text2,
+    hiddenFilter: true,
+    hiddenBlock: true,
+    titleCounter: '(0)',
+    blockInfo: true
+  }).page-catalog--full-size
+    .page-catalog__content
+      p Здесь вы можете сохранять товары, которые вам понравились, чтобы вернуться к ним позже и обдумать покупку.
+      a.btn.btn--dark.page-catalog__btn-link(href=pages.catalog.href) перейти в каталог
+block footer
+  +page-footer()

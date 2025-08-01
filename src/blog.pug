@@ -1,0 +1,26 @@
+extends pug/layout.pug
+
+block meta
+  title= pages.blog.text
+block header
+  +page-header({})
+block content
+  +page-articles({
+    title: pages.blog.text,
+  })
+    .page-catalog__articles.grid-tpl-2.grid-tpl-lg-3.grid-tpl-xl-4
+      each item, i in Array.from({length: 3})
+        each elem, i in titleArticles
+          +blog-preview({
+            img: i + 1,
+            title: elem,
+            name: [0, 3].includes(i) && "@liaponka"
+          })
+    +show-more.page-catalog__show-more
+    +preview-community({
+      title: "Станьте частью комьюнити the suitter",
+      description: 'Откройте доступ к миру качественного выбора и особых привилегий',
+      textLink: 'Стать участником',
+    }).preview-community--image
+block footer
+  +page-footer()

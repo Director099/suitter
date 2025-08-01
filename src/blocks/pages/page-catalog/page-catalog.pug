@@ -1,0 +1,47 @@
+mixin page-catalog({title, hiddenBlock, titleCounter, tagCategory, pagesCategory, hiddenFilter, blockInfo})
+  .page-catalog&attributes(attributes)
+    header.page-catalog__header
+      +breadcrumbs.page-catalog__breadcrumbs
+        +breadcrumbs-item(pages.index.text, pages.index.href)
+        if(!!pagesCategory)
+          +breadcrumbs-item(pages.catalog.text, pages.catalog.href)
+        +breadcrumbs-item(title)
+      section.page-catalog__row
+        h1.main-title.page-catalog__title= title
+          if(!!titleCounter)
+            span.page-catalog__counter= titleCounter
+        if(!hiddenFilter)
+          .page-catalog__col
+            +filter-bar({
+              text: 'Фильтры',
+              iconFilter: true,
+              counter: 4
+            })
+            +dropdown({
+              text: 'Сортировка',
+            }).page-catalog__dropdown
+              span.dropdown__content
+                span.dropdown__item-content.active
+                  a.dropdown__link-content(href='#') По умолчанию
+                span.dropdown__item-content
+                  a.dropdown__link-content(href='#') По возрастанию цены
+                span.dropdown__item-content
+                  a.dropdown__link-content(href='#') По убыванию цены
+                span.dropdown__item-content
+                  a.dropdown__link-content(href='#') По популярности
+                span.dropdown__item-content
+                  a.dropdown__link-content(href='#') По новизне
+      if(tagCategory)
+        ul.page-catalog__category
+          each item in allCatigorise
+            li.page-catalog__category-item
+              +tag-filter({
+                title: item.linkTitle,
+                iconClose: false
+              })(href=pages.catalogCategory.href)
+    if(!hiddenBlock)
+      .page-catalog__gap.grid-tpl-2.grid-tpl-lg-3.grid-tpl-xl-4
+        block
+      +show-more
+    if(!!blockInfo)
+      block

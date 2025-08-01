@@ -1,0 +1,18 @@
+extends pug/layout.pug
+
+block var
+  - const pageCurrent = pages.pageСommunity.href
+
+block meta
+  title= pages.pageСommunity.text
+block header
+  +page-header({})
+block content
+  +page-community
+  +preview-community({
+    title: "Станьте частью комьюнити the suitter",
+    description: 'Откройте доступ к миру качественного выбора и особых привилегий',
+    textLink: 'Стать участником',
+  }).preview-community--image
+block footer
+  +page-footer()

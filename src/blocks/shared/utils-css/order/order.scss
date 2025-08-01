@@ -1,0 +1,118 @@
+.order-0 {
+  order: 0
+}
+.order-1 {
+  order: 1
+}
+.order-2 {
+  order: 2
+}
+.order-3 {
+  order: 3
+}
+.order-4 {
+  order: 4
+}
+.order-5 {
+  order: 5
+}
+
+.order-md-0 {
+  @media (min-width: $screen-md) {
+    order: 1
+  }
+}
+.order-md-1 {
+  @media (min-width: $screen-md) {
+    order: 1
+  }
+}
+.order-md-2 {
+  @media (min-width: $screen-md) {
+    order: 2
+  }
+}
+.order-md-3 {
+  @media (min-width: $screen-md) {
+    order: 3
+  }
+}
+.order-md-4 {
+  @media (min-width: $screen-md) {
+    order: 4
+  }
+}
+.order-md-5 {
+  @media (min-width: $screen-md) {
+    order: 5
+  }
+}
+.order-lg-0 {
+  @media (min-width: $screen-lg) {
+    order: 0
+  }
+}
+.order-lg-1 {
+  @media (min-width: $screen-lg) {
+    order: 1
+  }
+}
+.order-lg-2 {
+  @media (min-width: $screen-lg) {
+    order: 2
+  }
+}
+.order-lg-3 {
+  @media (min-width: $screen-lg) {
+    order: 3
+  }
+}
+.order-lg-4 {
+  @media (min-width: $screen-lg) {
+    order: 4
+  }
+}
+.order-lg-5 {
+  @media (min-width: $screen-lg) {
+    order: 5
+  }
+}
+
+.order-xl-0 {
+  @media (min-width: $screen-xl) {
+    order: 0
+  }
+}
+.order-xl-1 {
+  @media (min-width: $screen-xl) {
+    order: 1
+  }
+}
+.order-xl-2 {
+  @media (min-width: $screen-xl) {
+    order: 2
+  }
+}
+.order-xl-3 {
+  @media (min-width: $screen-xl) {
+    order: 3
+  }
+}
+.order-xl-4 {
+  @media (min-width: $screen-xl) {
+    order: 4
+  }
+}
+.order-xl-5 {
+  @media (min-width: $screen-xl) {
+    order: 5
+  }
+}
+
+@for $i from 0 through 5 {
+  .order-xxl-#{$i} {
+    @media (min-width: $screen-xxl) {
+      order: $i;
+    }
+  }
+}

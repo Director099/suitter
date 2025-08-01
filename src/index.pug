@@ -1,0 +1,48 @@
+extends pug/layout.pug
+
+block meta
+  title Главная
+block header
+  +page-header({})
+block content
+  +main-slider({})
+  +block-products({
+    title: 'Новинки',
+    textLink: 'Перейти в каталог',
+  })
+    - for(let i = 1; i < 6; i++)
+      +preview({
+        img: i,
+        hasColors: i === 2,
+        btnFavoriteActive: i === 2,
+      }).swiper-slide.block-products__preview
+  +promo-blocks([3])
+  +block-products({
+    title: 'most wanted',
+    textLink: 'перейти в каталог',
+  })
+    - for(let i = 6; i < 11; i++)
+      +preview({
+        img: i,
+        hasColors: i === 2,
+        btnFavoriteActive: i === 2,
+      }).swiper-slide.block-products__preview
+  +block-products({
+    title: 'Блог',
+    textLink: 'Посмотреть все',
+    hasSlider: false
+  })
+    .block-products__list-blog.grid-tpl-2.grid-tpl-lg-4
+      each item, i in titleArticles
+        +blog-preview({
+          img: i + 1,
+          title: item,
+          name: [0,3].includes(i) && "@liaponka"
+        })
+  +preview-community({
+    title: "Стань частью комьюнити the suitter",
+    description: 'Регистрируйся в программе лояльности, накапливай баллы и получай бонусы',
+    textLink: 'Зарегистрироваться',
+  })
+block footer
+  +page-footer()

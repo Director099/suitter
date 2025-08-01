@@ -1,0 +1,27 @@
+.show-more {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  text-align: center;
+  max-width: 288px;
+  width: 100%;
+  margin: 36px auto;
+
+  @media (min-width: $screen-lg) {
+    margin: 29px auto 64px;
+  }
+}
+
+.show-more__progress {
+  width: 100%;
+}
+
+.show-more__text {
+  font-size: 12px;
+  line-height: 1;
+  text-align: center;
+  color: $color-gray;
+  margin: 0;
+}

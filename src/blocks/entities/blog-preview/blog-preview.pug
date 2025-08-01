@@ -1,0 +1,8 @@
+mixin blog-preview({img, title, name})
+  a.blog-preview(href=pages.blogSingle.href)
+    header.blog-preview__header
+      img.blog-preview__img(src=`img/content/blog/blog-${img}.jpg`, alt=title)
+    footer.blog-preview__info
+      h3.blog-preview__title!= title
+      if(!!name)
+        span.blog-preview__name= name

@@ -1,0 +1,12 @@
+mixin fashion({mainImage, title, desc, folderImg, list, gallery})
+  a.fashion(href=`img/content/fashion-${folderImg}/${mainImage}.jpg` data-fancybox=gallery)
+    .fashion__main
+      img(src=`img/content/fashion-${folderImg}/${mainImage}.jpg`, alt=title)
+      section.fashion__box
+        h2.fashion__title= title
+        .fashion__desc
+          p!= desc
+    .fashion__picture.d-none
+      each item, i in list
+        if(i !== 0)
+          img(src=`img/content/fashion-${folderImg}/fashion-${i + 1}.jpg`, alt=title data-fancybox=gallery)

@@ -1,0 +1,119 @@
+.page-header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  background-color: $white;
+  z-index: 105;
+
+  &::after {
+    display: block;
+    content: "";
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    background-color: $color-light;
+  }
+
+  @media (min-width: $screen-lg) {
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    padding: 0 40px;
+    height: $lgHeightHeader;
+  }
+}
+
+.page-header__wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 22px;
+  padding: 7px 15px;
+  border-bottom: 1px solid $color-light;
+  border-top: 1px solid $color-light;
+
+  @media (min-width: $screen-lg) {
+    gap: 0;
+    border: none;
+    padding: 0;
+    height: 100%;
+  }
+}
+
+.page-header__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 10px 0;
+
+  @media (min-width: $screen-lg) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: auto;
+    padding: 0;
+    z-index: 1;
+  }
+}
+
+.page-header__navigation {
+  display: none;
+
+  @media (min-width: $screen-lg) {
+    position: relative;
+    display: flex;
+    align-items: center;
+    margin-left: -20px;
+    height: 100%;
+  }
+}
+
+.page-header__actions {
+  @include ul-none;
+  display: flex;
+  align-items: center;
+}
+
+.page-header__actions-link {
+  padding: 5px 12px;
+  cursor: pointer;
+  font-size: 13px;
+  text-transform: uppercase;
+}
+
+.page-header__link-city {
+  position: relative;
+  padding: 5px 12px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 140%;
+  text-transform: uppercase;
+  color: $text-color;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 3.5px;
+    left: 12px;
+    right: 12px;
+    height: 1px;
+    background-color: $text-color;
+  }
+}
+
+.page-header__city-icon {
+  position: absolute;
+  right: 0;
+  top: 7px;
+}
+

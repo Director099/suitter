@@ -1,0 +1,56 @@
+- const tableHead = ['INT', 'Размер производителя', 'Обхват груди', 'Обхват талии', 'Обхват бёдер', 'Рост'];
+
+-
+  const tableBody = [
+    [
+      'XXS', '40', '78-82', '78-82', '86-90', '164'
+    ],
+    [
+      'XS', '42', '82-86', '62-66', '90-94', '164'
+    ],
+    [
+      'S', '44', '86-90', '66-70', '94-98', '170'
+    ],
+    [
+      'M', '46', '90-94', '70-74', '98-102', '170'
+    ],
+    [
+      'L', '48', '94-98', '74-78', '102-106', '170'
+    ],
+    [
+      'XL', '50', '98-102', '78-82', '106-110', '174'
+    ]
+  ];
+
+mixin tableGorup()
+  +table().size-table__table
+    tr
+      each item in tableHead
+        th= item
+    each item in tableBody
+      tr
+        each elem in item
+          td= elem
+
+mixin size-table()
+  +tab-filter({
+    list: [
+      {
+        text: 'Таблица размеров',
+        filter: 'size-chart',
+        active: true
+      },
+      {
+        text: 'Обмеры изделия',
+        filter: 'size-product'
+      }
+    ]
+  }).size-table
+    ul.size-table__list
+      li.size-table__item(data-filter="size-chart")
+        +tableGorup
+      li.size-table__item(data-filter="size-product")
+        +tableGorup
+    span.size-table__warning *Все размеры указаны в см
+    .size-table__content
+      p Введите свои параметры и мы подберем для вас оптимальный размер

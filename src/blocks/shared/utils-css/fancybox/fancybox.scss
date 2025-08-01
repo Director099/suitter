@@ -1,0 +1,11 @@
+.fancybox__content>.f-button.is-close-btn {
+  display: none;
+}
+
+.fancybox__container {
+  --fancybox-bg: rgba(0,0,0,.56);
+}
+
+.fancybox__backdrop {
+  backdrop-filter: blur(3px);
+}

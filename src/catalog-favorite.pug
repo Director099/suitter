@@ -1,0 +1,21 @@
+extends pug/layout.pug
+
+block meta
+  title= pages.catalogFavorite.text
+block header
+  +page-header({})
+block content
+  +page-catalog({
+    title: pages.catalogFavorite.text,
+    titleCounter: "(12)",
+  })
+    each item, i in Array.from({length: 12})
+      +preview({
+        img: i + 1,
+        hasColors: i === 2,
+        priceSale: i !== 2 ? "" : '5 768',
+        btnFavoriteActive: i === 2,
+        btnFavoriteCount: i === 2 ? 124 : 123
+      })
+block footer
+  +page-footer()

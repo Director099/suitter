@@ -1,0 +1,56 @@
+include mock
+
+mixin modal-filter
+  +modal({
+    id: 'modal-filter',
+    title: 'Фильтр (0)'
+  }).modal-filter
+    form.modal-filter__form
+      button.btn.btn--line.modal-filter__btn(type="reset") Сбросить фильтр
+      ul.modal-filter__list
+        li.modal-filter__item
+          +link-info({text: 'В наличии'})
+        li.modal-filter__item(data-filter="")
+          +link-info({text: 'Категория'})(data-filter-link="")
+          +filter-current({title: 'Категория'})
+            .filter-current__checkboxes
+              each item in checkboxListCategory
+                +field-checkbox({
+                  title: item.title,
+                  counter: item.counter
+                })
+        li.modal-filter__item(data-filter="")
+          +link-info({text: 'Цена'})(data-filter-link="")
+          +filter-current({title: 'Цена'})
+            .filter-current__range
+              +range
+        li.modal-filter__item(data-filter="")
+          +link-info({text: 'Размер'})(data-filter-link="")
+          +filter-current({title: 'Размер'})
+            .filter-current__checkboxes
+              each item in checkboxListSize
+                +field-checkbox({
+                  title: item.title,
+                  counter: item.counter
+                })
+        li.modal-filter__item(data-filter="")
+          +link-info({text: 'Цвет'})(data-filter-link="")
+          +filter-current({title: 'Цвет'})
+            .filter-current__checkboxes
+              each item in checkboxListColors
+                +field-checkbox({
+                  title: item.title,
+                  counter: item.counter,
+                  styleBox: item.style
+                })
+        li.modal-filter__item(data-filter="")
+          +link-info({text: 'Материал'})(data-filter-link="")
+          +filter-current({title: 'Материал'})
+            .filter-current__checkboxes
+              each item in checkboxListMaterial
+                +field-checkbox({
+                  title: item.title,
+                  counter: item.counter
+                })
+      button.btn.btn--dark.btn--text.modal-filter__send показать товары
+        span 78

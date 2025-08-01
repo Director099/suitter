@@ -1,0 +1,40 @@
+.modal-basket {
+  @media (min-width: $screen-lg) {
+    max-width: 527px;
+  }
+}
+
+.modal-basket__description {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+}
+
+.modal-basket .total-amount__goods {
+  max-height: inherit;
+  overflow: auto;
+  margin-bottom: 20px;
+
+  @media (min-width: $screen-lg) {
+    height: calc(100vh - 368px);
+  }
+}
+
+.modal-basket .modal__dialog {
+  height: 100%;
+}
+
+.modal-basket .total-amount {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.modal-basket .total-amount__goods {
+  flex-grow: 1;
+}

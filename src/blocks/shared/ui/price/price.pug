@@ -1,0 +1,6 @@
+mixin price({priceSale, priceCurrent})
+  p.price&attributes(attributes)
+    span.price__text(class=!!priceSale && 'price__text--cut')= `${priceCurrent} BYN`
+    if (!!priceSale)
+      span.price__text.price__text--sale= `${priceSale} BYN`
+        span.price__percent (-25%)

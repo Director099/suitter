@@ -1,0 +1,12 @@
+mixin main-slider({slidesCount=3, srcNumber=1, href=pages.catalog.href})
+  //-TODO:Подумать над неймингом, возможно стойт оставить как есть
+  .main-slider&attributes(attributes)
+    .swiper.main-slider__swiper(data-main-slider="")
+      .swiper-wrapper
+        - for(let i = 1; i < slidesCount; i++)
+          .swiper-slide.main-slider__item
+            a.main-slider__link(href=href)
+              img(src=`img/content/promo-${i}.jpg` alt="Summer Sale")
+      //-.swiper-button-next.swiper-button-arrow
+      //-.swiper-button-prev.swiper-button-arrow
+

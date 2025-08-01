@@ -1,0 +1,48 @@
+.not-found {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 40px 0;
+  flex-grow: 1;
+}
+
+.not-found__title {
+  display: flex;
+  font-weight: 100;
+  font-size: 202px;
+  line-height: 110%;
+  text-align: center;
+  text-transform: uppercase;
+  margin: 0;
+
+  span {
+    transform: rotate(20deg);
+  }
+
+  @media (min-width: $screen-lg) {
+    font-weight: 100;
+    font-size: 202px;
+    line-height: 110%;
+  }
+}
+
+.not-found__subtitle {
+  margin-top: -16px;
+  margin-bottom: 40px;
+}
+
+.not-found__text {
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 140%;
+  max-width: 416px;
+  margin-bottom: 24px;
+}
+
+.not-found__btn {
+  width: 100%;
+  justify-content: center;
+  max-width: 221px;
+}

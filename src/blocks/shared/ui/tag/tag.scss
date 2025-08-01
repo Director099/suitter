@@ -1,0 +1,16 @@
+.tag {
+  display: inline-flex;
+  gap: 4px;
+  color: $text-color;
+  padding: 6px 10px;
+  background-color: $white;
+  border-radius: 50px;
+
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 140%;
+  text-align: right;
+  text-transform: uppercase;
+  fill: transparent;
+  cursor: pointer;
+}

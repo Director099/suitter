@@ -1,0 +1,19 @@
+.or {
+  display: flex;
+  align-items: center;
+
+  &::before,
+  &::after {
+    content: '';
+    flex-grow: 1;
+    height: 1px;
+    background-color: #E4E4E4;
+  }
+}
+
+.or__inner {
+  padding-left: 8px;
+  padding-right: 8px;
+  color: $gray-light;
+  line-height: 140%;
+}

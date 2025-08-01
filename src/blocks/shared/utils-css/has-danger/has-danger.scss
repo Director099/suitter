@@ -1,0 +1,13 @@
+.has-danger {
+  .field-text__name {
+    color: $color-danger;
+  }
+
+  .pristine-error {
+    margin-top: 4px;
+    color: $color-danger;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 120%;
+  }
+}

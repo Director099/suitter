@@ -1,0 +1,29 @@
+.bonus-card {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+}
+
+.bonus-card__img {
+  max-width: 115px;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.bonus-card__title {
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: 0.1px;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.bonus-card__price {
+  display: inline-flex;
+  gap: 5px;
+  font-weight: 400;
+  font-size: 28px;
+  line-height: 1;
+  margin: 0;
+}

@@ -1,0 +1,50 @@
+include ./mock
+
+mixin page-checkout
+  .page-checkout
+    +stepsTab([
+      {
+        text: 'Шаг 1: Оформление заказа',
+        active: true
+      },
+      {
+        text: 'шаг 2: способ Доставки'
+      },
+      {
+        text: 'шаг 3: способ оплаты'
+      },
+    ]).page-checkout__steps
+    .page-checkout__grid
+      .page-checkout__content
+        h1.main-title.page-checkout__title-basket Корзина (3)
+        each item, i in cardBasket
+          +card-product({
+            folderImg: 1,
+            img: i + 1,
+            title: item.title,
+            priceSale: item.priceSale,
+            priceCurrent: item.priceCurrent,
+            hasDelete: hasDelete
+          })
+      aside.page-checkout__total-amount
+        h2.main-title.page-checkout__title-order Ваш заказ
+        +table().page-checkout__purchase-total
+          tr
+            td Сумма заказа
+            td 2700 BYN
+          tr
+            td Доставка
+            td
+              span Не выбрана
+          tr
+            td Промокод
+            td
+              span Не применен
+          tr
+            td Итого к оплате
+            td 2700 BYN
+        +alert('Войдите или зарегистрируйтесь, чтобы оформить заказ, применить промокод и получить баллы за покупку').page-checkout__alert
+        .page-checkout__btns
+          a.btn.btn--dark(href="#modal-entry" data-fancybox="") Войти
+          a.btn.btn--light(href="#modal-reg" data-fancybox="") Создать профиль
+

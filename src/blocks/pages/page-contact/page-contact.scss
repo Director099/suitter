@@ -1,0 +1,41 @@
+.page-contact {
+  padding-top: 20px;
+
+  @media(min-width: $screen-lg) {
+    padding-top: 43px;
+  }
+}
+
+.page-contact__title {
+  margin-bottom: 28px;
+}
+
+.page-contact__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 34px;
+
+  @media(min-width: $screen-lg) {
+    grid-template-columns: 1fr 254px;
+    gap: 73px;
+  }
+}
+
+.page-contact__map {
+  @media(max-width: $screen-lg - 1) {
+    margin-left: -15px;
+    margin-right: -15px;
+  }
+}
+
+.page-contact__map iframe {
+  border: none;
+  width: 100%;
+  min-height: 476px;
+}
+
+.page-contact__shops {
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+}

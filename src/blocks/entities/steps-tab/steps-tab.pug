@@ -1,0 +1,7 @@
+mixin stepsTab(list)
+  .steps-tab&attributes(attributes)
+    ul.steps-tab__list
+      each item, i in list
+        li.steps-tab__item
+          a.steps-tab__link(href=item.href class=item.active ? 'active' : '')= item.text
+    block

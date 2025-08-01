@@ -1,0 +1,41 @@
+.filter-bar {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  line-height: 114%;
+  font-weight: 400;
+  color: inherit;
+
+  text-align: right;
+  text-transform: uppercase;
+
+  padding: 4.5px 0;
+}
+
+.filter-bar__counter {
+  position: absolute;
+  top: -6px;
+  right: -7px;
+  background-color: $text-color;
+  color: $white;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  font-weight: 400;
+  font-size: 10px;
+  line-height: 1;
+  text-align: center;
+  text-transform: uppercase;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  outline: 1px solid $white;
+}
+
+.filter-bar__icon {
+  position: relative;
+  fill: transparent;
+}

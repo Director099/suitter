@@ -1,0 +1,40 @@
+.advantages--title-center .advantages__title {
+  text-align: center;
+}
+
+.advantages__title {
+  margin-bottom: 40px;
+}
+
+.advantages__warning {
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 130%;
+  color: #595959;
+
+  margin: 15px 0 0;
+}
+
+.advantages__grid {
+  display: flex;
+  gap: 10px;
+  overflow: auto;
+  margin-left: -15px;
+  margin-right: -15px;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+
+  @media (min-width: $screen-lg) {
+    gap: 10px;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+.advantages__card {
+  min-width: 280px;
+}

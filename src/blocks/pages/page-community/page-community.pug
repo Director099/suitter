@@ -1,0 +1,46 @@
+extends ./mock
+
+mixin page-community
+  .page-community
+    +main-block({
+      title: 'комьюнити The Suitter',
+      text: 'Ваш путь к привилегиям начинается здесь. Открывайте уровни, получайте ключи и доступ к новым возможностям',
+      btnText: 'Присоединиться к комьюнити',
+      btnHref: '#',
+      isImg: true
+    }).page-community__main-product
+    +card-content({
+      title: 'Что такое комьюнити the Suitter?',
+      classNamePick: 'd-none d-lg-block'
+    }).page-community__card-content
+      p Это не просто программа лояльности. Это ваш персональный доступ к привилегиям: бонусным баллам за каждую покупку, раннему доступу к новым коллекциям, закрытым мероприятиям и персональным предложениям.
+      p Здесь ценят выбор, внимание к деталям и искреннюю приверженность стилю
+    +block-products({
+      title: 'Как стать частью комьюнити?',
+      btnText: 'Стать частью комьюнити',
+      hasSlider: false
+    }).page-community__block-products
+      .page-community__steps.swipe-list.grid-tpl-lg-3
+        each item, i in listСommunity
+          +step-block({
+            title: item.title,
+            text: item.text,
+            tagText: `Шаг ${i + 1}`
+          })
+    +block-products({
+      title: 'Каждый ключ открывает больше',
+      hasSlider: false
+    }).page-community__table
+      .page-community__table-char(data-accordion="parent", data-destroy=`(max-width: ${mediaSize.lg - 1}px)`)
+        each item, i in listStatus
+          - const firstElem = i === 0 ? `table-char--first` : 'table-char--order';
+          - const classActive = item.current && 'current';
+          +table-char({
+            list: item.list,
+            title: item.title,
+            subtitle: item.subtitle,
+            isAccordion: true,
+            iconTitle: !item.iconTitle,
+            hasBtn: item.hasBtn,
+            hasBtnText: item.hasBtnText
+          })(data-accordion="element" class=[firstElem, classActive])

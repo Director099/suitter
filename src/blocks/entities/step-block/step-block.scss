@@ -1,0 +1,34 @@
+.step-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 463px;
+  background-color: #F7F7F7;
+  padding: 33px 37px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+}
+
+.step-block__column {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  min-height: 197px;
+}
+
+.step-block__desc p:last-child {
+  margin: 0;
+}
+
+.step-block--advantages {
+  background-color: transparent;
+
+  min-height: 282px;
+  padding: 27px 23px;
+}
+
+.step-block--advantages .step-block__column {
+  min-height: 129px;
+}

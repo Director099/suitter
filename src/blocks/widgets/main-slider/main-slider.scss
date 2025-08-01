@@ -1,0 +1,24 @@
+.main-slider {
+  margin: 0 -15px;
+
+  @media(min-width: $screen-lg) {
+    margin: 0 -40px;
+  }
+}
+
+.main-slider__item {
+  height: auto;
+}
+
+.main-slider__link {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.main-slider__link img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+

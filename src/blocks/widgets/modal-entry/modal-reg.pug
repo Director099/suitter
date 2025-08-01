@@ -1,0 +1,45 @@
+-
+  const formReg = [
+    formFilelds.name,
+    formFilelds.surname,
+    formFilelds.phone,
+    formFilelds.email,
+    formFilelds.birthday,
+    formFilelds.password,
+  ]
+
+mixin modal-reg()
+  +modal({
+    id: 'modal-reg',
+    title: "Регистрация"
+  }).modal-entry.modal-entry--reg
+    .modal-entry__group
+      +form.modal-entry__form(method="POST" data-form="")
+        +fieldset.modal-entry__fieldset
+          each item in formReg
+            +field-text({
+              title: item.title,
+              isTextarea: item.isTextarea,
+              attrs: {
+                id: item.attrs.id,
+                placeholder: item.attrs.placeholder,
+                required: true,
+                type: item.attrs.type,
+                minlength: item.attrs.minlength,
+                min: item.attrs.min,
+                pattern: item.attrs.pattern,
+                'data-pristine-required-message': " ",
+                'data-pristine-minlength-message': item.attrs['data-pristine-minlength-message'],
+                'data-pristine-min-message': item.attrs['data-pristine-min-message'],
+                'data-pristine-pattern-message': item.attrs['data-pristine-pattern-message'],
+                "data-number-only": item.attrs['data-number-only'],
+                "data-pristine-email-message": item.attrs["data-pristine-email-message"],
+                "data-pristine-equals-message": item.attrs["data-pristine-equals-message"],
+                "data-pristine-equals": item.attrs["data-pristine-equals"],
+                "data-birthday": item.attrs["data-birthday"],
+              }
+            })
+              if(item.attrs.type === 'password')
+                span.field-text__btn-password(aria-label="Показать пароль" data-btn-eye="")
+          button.btn.btn--dark.modal-entry__btn(disabled, data-form-btn="") зарегистрироваться
+    p.modal__info У меня уже есть профиль. #[a(data-fancybox-src="#modal-entry") Войти]

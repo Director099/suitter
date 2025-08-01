@@ -1,0 +1,65 @@
+-
+  const formEntry = [
+    formFilelds.email,
+    formFilelds.password,
+  ]
+
+mixin modal-entry()
+  +modal({
+    id: 'modal-entry',
+    title: "Вход"
+  }).modal-entry
+    +tab-filter({
+      list: [
+        {
+          text: 'По номеру телефона',
+          filter: 'entry-phone',
+          active: true
+        },
+        {
+          text: 'По email',
+          filter: 'entry-email'
+        }
+      ]
+    }).tab-filter--modal
+      .modal-entry__tab(data-filter="entry-phone")
+        form.modal-entry__fieldset(method="POST" data-form="")
+          +field-text({
+            title: formFilelds.phone.title,
+            attrs: {
+              placeholder: formFilelds.phone.attrs.placeholder,
+              required: true,
+              type: formFilelds.phone.attrs.type,
+              pattern: formFilelds.phone.attrs.pattern,
+              "data-pristine-pattern-message": formFilelds.phone.attrs["data-pristine-pattern-message"]
+            }
+          })
+          button.btn.btn--dark.modal-entry__btn(disabled, data-form-btn="") Войти
+      .modal-entry__tab(data-filter="entry-email")
+        form.modal-entry__fieldset(method="POST" data-form="")
+          each item in formEntry
+            +field-text({
+              title: item.title,
+              isTextarea: item.isTextarea,
+              attrs: {
+                placeholder: item.attrs.placeholder,
+                required: true,
+                type: item.attrs.type,
+                minlength: item.attrs.minlength,
+                min: item.attrs.min,
+                pattern: item.attrs.pattern,
+                'data-pristine-required-message': " ",
+                'data-pristine-minlength-message': item.attrs['data-pristine-minlength-message'],
+                'data-pristine-min-message': item.attrs['data-pristine-min-message'],
+                'data-pristine-pattern-message': item.attrs['data-pristine-pattern-message'],
+                "data-number-only": item.attrs['data-number-only'],
+                "data-pristine-email-message": item.attrs["data-pristine-email-message"],
+                "data-pristine-equals-message": item.attrs["data-pristine-email-message"],
+                "data-pristine-equals": item.attrs["data-pristine-equals"]
+              }
+            })
+              if(item.attrs.type === 'password')
+                span.field-text__btn-password(aria-label="Показать пароль" data-btn-eye="")
+          button.btn.btn--dark.modal-entry__btn(disabled, data-form-btn="") Войти
+      a.line-link.modal-entry__forgot-psw(data-fancybox-src="#modal-recovery") Забыли пароль?
+    p.modal__info У меня ещё нет профиля. #[a(data-fancybox-src="#modal-reg") Зарегистрироваться]

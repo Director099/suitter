@@ -1,0 +1,8 @@
+mixin card-content({title, img, classNamePick})
+  .card-content&attributes(attributes)
+    .card-content__pick(aria-label=title class=classNamePick)
+      if(!!img)
+        img.card-content__img(src=img alt=title)
+    section.card-content__main-content
+      h1.main-title.card-content__title= title
+      block

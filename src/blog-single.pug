@@ -1,0 +1,62 @@
+extends pug/layout.pug
+
+block meta
+  title= pages.blogSingle.text
+block header
+  +page-header({})
+block content
+  .blog-single
+    header.blog-single__header
+      +breadcrumbs
+        +breadcrumbs-item(pages.index.text, pages.index.href)
+        +breadcrumbs-item(pages.blog.text, pages.blog.href)
+        +breadcrumbs-item(pages.blogSingle.text)
+    .blog-single__stack
+      .blog-single__grid
+        .blog-single__sidebar
+          .blog-single__sidebar-head
+            span.blog-single__data 20.05.2025
+            +tag-filter({
+              title: "Выбор стилиста",
+              iconClose: false
+            })
+          h1.main-title.blog-single__title= pages.blogSingle.text
+          strong.blog-single__name @liaponka
+        .blog-single__content
+          img(src="img/content/blog/blog-single.jpg" alt=pages.blogSingle.text)
+          p Иногда всё, что нужно для стильного гардероба — это одна универсальная база и немного фантазии. Стилист и контент-креатор Лия Руммо (@liaponka) доказывает это в своей свежей подборке: 6 образов, собранных вокруг одних белых широких брюк. Мы с удовольствием делимся её вдохновляющим миксом на страницах нашего блога.
+          .blog-single__group
+            h2.blog-single__group-title Образ 1: Романтика в розовом
+            p Лёгкий розовый жакет с завязкой в сочетании с белыми брюками — это мягкий и воздушный образ для прогулок, свиданий и лёгких деловых встреч. Босоножки на тонких ремешках добавляют женственности, а едва заметный жёлтый топ внутри — акцент для тех, кто любит детали.
+          .blog-single__group
+            h3.blog-single__group-title Образ 2: Французский уикенд
+            p Тельняшка, красный платок и мини-сумка цвета вина — узнаваемые и в то же время игривые элементы, будто вы собираетесь на пикник на Монмартре. Этот образ доказывает: морской стиль может быть актуален не только у воды, но и в городе.
+          .blog-single__pictures.grid-tpl-2
+            a(href="img/content/blog/blog-1.jpg" data-fancybox="gallery")
+              img(src="img/content/blog/blog-1.jpg" alt="Образ 2: Французский уикенд")
+            a(href="img/content/blog/blog-1.jpg" data-fancybox="gallery")
+              img(src="img/content/blog/blog-4.jpg" alt="Образ 2: Французский уикенд")
+          p Следите за продолжением — скоро покажем ещё 4 образа Лии в этом же ключе. И да, белые брюки — точно незаменимая вещь лета.
+          +quote("Совет от лии:")
+            p “Если у вас есть любимые базовые брюки — смело экспериментируйте с верхами и аксессуарами. Настроение образа меняется моментально, а чувствовать себя стильно можно каждый день.”
+          a.btn.btn--dark Перейти к коллекции
+            svg(width="32", height="32")
+              use(href="img/symbols.svg#icon-arrow-right-2")
+      +block-products({
+        title: 'Больше интересного',
+        hasSlider: false
+      })
+        .block-products__list-blog.grid-tpl-2.grid-tpl-lg-4
+          each item, i in titleArticles
+            +blog-preview({
+              img: i + 1,
+              title: item,
+              name: [0, 3].includes(i) && "@liaponka"
+            })
+      +preview-community({
+        title: "Станьте частью комьюнити the suitter",
+        description: 'Откройте доступ к миру качественного выбора и особых привилегий',
+        textLink: 'Стать участником',
+      }).preview-community--image
+block footer
+  +page-footer()

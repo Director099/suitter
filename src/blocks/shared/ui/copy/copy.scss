@@ -1,0 +1,27 @@
+.copy {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  fill: transparent;
+}
+
+.copy__hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0);
+}
+
+.copy__btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  background: inherit;
+  border: none;
+  padding: 0;
+}

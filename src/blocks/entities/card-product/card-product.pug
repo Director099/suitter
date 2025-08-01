@@ -1,0 +1,59 @@
+-
+  const sizeSelect = [
+    {
+      title: 'XS',
+    },
+    {
+      title: 'XL',
+    },
+    {
+      title: 'XXl',
+    },
+  ]
+
+  const countSelect = [
+    {
+      title: '1',
+    },
+    {
+      title: '2',
+    },
+    {
+      title: '3',
+    },
+  ]
+
+
+mixin card-product({folderImg, img, priceSale, priceCurrent, title, hasDelete})
+  .card-product&attributes(attributes)
+    a.card-product__img(href=pages.catalogSingle.href)
+      img(src=`img/content/preview-${folderImg}/prev-${img}.jpg` alt=title)
+    .card-product__row
+      section.card-product__info
+        h3.card-product__title
+          a(href=pages.catalogSingle.href)=title
+        .card-product__desc
+          .card-product__row-text
+            p Цвет: лаймовый
+            p Размер: S
+          +field-num({
+            mods: '',
+            attrs: {
+              name: 'quantity',
+              max: '1000',
+              min: '1',
+              step: '1',
+              value: '1'
+            }
+          })
+        +price({
+          priceSale: priceSale,
+          priceCurrent: priceCurrent
+        }).card-product__price
+      .card-product__btns
+        button(type="button").card-product__icon Избранное
+          svg(width="24", height="24")
+            use(href=`img/symbols.svg#icon-heart`)
+        button(type="button").card-product__icon Удалить
+          svg(width="24", height="24")
+            use(href=`img/symbols.svg#icon-bag-2`)

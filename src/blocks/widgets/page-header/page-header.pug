@@ -1,0 +1,30 @@
+mixin page-header({basketId="#modal-basket-no-empty"})
+  header.page-header
+    +logo(pages.index.href).page-header__logo
+    .page-header__wrap
+      +burger('меню')(data-src="#modal-menu").d-lg-none
+      +main-nav.page-header__navigation
+      ul.page-header__actions
+        li.page-header__actions-item
+          +link-icon({
+            svg: 'search',
+          }).page-header__actions-link
+        li.page-header__actions-item.d-none.d-lg-block
+          +link-icon({
+            svg: 'user',
+          }).page-header__actions-link(data-fancybox="" href="#modal-entry")
+        li.page-header__actions-item
+          +link-icon({
+            svg: 'heart',
+            count: 12
+          }).page-header__actions-link(href=pages.catalogFavorite.href)
+        li.page-header__actions-item
+          +link-icon({
+            svg: 'bag',
+            count: (basketId === '#modal-basket') && 3
+          }).page-header__actions-link(data-fancybox="" href=basketId)
+        li.page-header__actions-item
+          a.page-header__link-city(href="#")
+            | byn
+            svg.page-header__city-icon(width="8", height="8")
+              use(href=`img/symbols.svg#icon-arrow-down`)

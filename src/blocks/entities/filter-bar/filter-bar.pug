@@ -1,0 +1,13 @@
+mixin filter-bar({text, counter, iconFilter, iconArrow})
+  a.filter-bar(href="#modal-filter" data-fancybox="")
+    if(!!iconFilter)
+      span.filter-bar__icon
+        svg(width="24", height="24")
+          use(href="img/symbols.svg#icon-filter")
+        if(!!counter)
+          span.filter-bar__counter= counter
+    span.d-none.d-lg-block= text
+    if(!!iconArrow)
+      svg.filter-bar__arrow.d-none.d-lg-block(width="16", height="8")
+        use(href="img/symbols.svg#icon-arrow-bottom")
+

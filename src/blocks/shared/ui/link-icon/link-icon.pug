@@ -1,0 +1,7 @@
+mixin link-icon({svg, count, width=24, height=24})
+  a.link-icon&attributes(attributes)
+    span.link-icon__wrap
+      svg(width=width, height=height)
+        use(href=`img/symbols.svg#icon-${svg}`)
+      if(!!count)
+        span.link-icon__count= count

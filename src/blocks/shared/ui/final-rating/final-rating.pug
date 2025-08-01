@@ -1,0 +1,9 @@
+mixin final-rating(data)
+  .final-rating&attributes(attributes)
+    .final-rating__grid
+      .final-rating__row
+        - for (let i = 1; i <= 5; i++)
+          svg.final-rating__star.final-rating__star--filled(width="16", height="16")
+            use(href="img/symbols.svg#icon-stars")
+      if(!!data)
+        p.final-rating__data= data

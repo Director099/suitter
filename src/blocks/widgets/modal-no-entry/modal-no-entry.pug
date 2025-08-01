@@ -1,0 +1,9 @@
+mixin modal-no-entry()
+  +modal({
+    id: 'modal-no-entry',
+    title: "Вход и регистрация"
+  }).modal-no-entry
+    .modal-no-entry__desc
+      p Войдите в аккаунт, чтобы смотреть свой вишлист на любом устройстве
+    .modal-no-entry__wrap
+      a.btn.btn--dark.btn--small.modal-no-entry__btn(data-fancybox-src="#modal-entry") Войти в аккаунт

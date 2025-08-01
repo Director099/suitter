@@ -1,0 +1,18 @@
+mixin filter-current({title})
+  .filter-current(data-filter-current="")&attributes(attributes)
+    .filter-current__header
+      +link-icon({
+        svg: 'arrow-left',
+        width: 32,
+        height: 32,
+      }).filter-current__back(data-close-filter-current="")
+      h2.main-title.filter-current__title=title
+      +link-icon({
+        svg: 'close',
+        width: 32,
+        height: 32,
+      }).filter-current__close(data-fancybox-close="")
+    .filter-current__content
+      button.btn.btn--line.filter-current__reset(type="reset") Сбросить фильтр
+      block
+      button.btn.btn--dark.filter-current__send(type="button") применить

@@ -1,0 +1,14 @@
+.page-cert__list-info {
+  padding-left: 18px;
+  margin-top: 20px;
+
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 130%;
+}
+
+.page-cert__gap {
+  @media(min-width: $screen-lg) {
+    gap: 10px;
+  }
+}

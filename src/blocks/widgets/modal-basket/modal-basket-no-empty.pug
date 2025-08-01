@@ -1,0 +1,8 @@
+mixin modal-basket-no-empty
+  +modal({
+    id: 'modal-basket-no-empty',
+    title: 'Корзина (0)'
+  }).modal-basket
+    .modal-basket__description
+      p Ваша корзина пуста
+    a.btn.btn--dark.modal-basket__btn(href=pages.catalog.href) Перейти в каталог

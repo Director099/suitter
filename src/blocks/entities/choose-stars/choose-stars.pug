@@ -1,0 +1,11 @@
+mixin choose-stars(title)
+  .choose-stars&attributes(attributes)
+    if(!!title)
+      h3.choose-stars__title=title
+    .choose-stars__group
+      input.choose-stars__visually-hidden(name="fst" value="0" type="radio" disabled checked)
+      - for(let i = 1; i < 6; i++)
+        label.choose-stars__label(for=`fst-${i}`)
+          svg(width="14" height="14")
+            use(href="img/symbols.svg#icon-stars")
+        input.choose-stars__visually-hidden(name="fst" id=`fst-${i}` value=i type="radio")

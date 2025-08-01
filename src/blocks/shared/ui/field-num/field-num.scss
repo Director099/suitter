@@ -1,0 +1,111 @@
+// В этом файле должны быть стили для БЭМ-блока field-num, его элементов,
+// модификаторов, псевдоселекторов, псевдоэлементов, @media-условий...
+// Очередность: http://nicothin.github.io/idiomatic-pre-CSS/#priority
+
+.field-num {
+
+  $block-name:                &; // #{$block-name}__element
+
+  display: block;
+  //margin-bottom: $typo-margin-vertical;
+
+  &__name {
+    //@include field-name;
+  }
+
+  &__input-wrap {
+    display: block;
+  }
+
+  &__input-and-btns {
+    position: relative;
+    display: inline-block;
+    //width: 140px;
+  }
+
+  &__input {
+    font-family: $font-family;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 130%;
+
+    padding: 9px 25px;
+    text-align: center;
+
+    border-radius: 8px;
+    border: 1px solid #E4E4E4;
+
+    width: 100%;
+    max-width: 78px;
+
+    -moz-appearance:textfield;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+
+    #{$block-name}:not(#{$block-name}--disabled) button:focus ~ & { // stylelint-disable-line
+      @include field-focus;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border: none;
+    padding: 0;
+    border-radius: 50px;
+    font-size: 14px;
+    line-height: 16px;
+    background-color: transparent;
+    width: 20px;
+    height: 20px;
+    background-position: center;
+
+    &:hover,
+    &:focus {
+      //background-color: $gray-lightest;
+      cursor: pointer;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    &--plus {
+      right: 5px;
+      background-image: url("data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 8.66663H12' stroke='%231E1E1E' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8 12.6666V4.66663' stroke='%231E1E1E' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    }
+
+    &--minus {
+      left: 5px;
+      background-image: url("data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4 8.66663H12' stroke='%231E1E1E' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+    }
+
+    #{$block-name}--disabled & {
+      cursor: not-allowed;
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
+    }
+  }
+
+
+  &--error {
+
+    #{$block-name}__name,
+    #{$block-name}__input,
+    #{$block-name}__help-text {
+      color: $color-danger;
+    }
+
+    #{$block-name}__input {
+      border-color: $color-danger;
+      background-color: lighten($color-danger, 35%);
+    }
+  }
+}
