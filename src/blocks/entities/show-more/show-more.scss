@@ -5,11 +5,11 @@
   justify-content: center;
   gap: 20px;
   text-align: center;
-  max-width: 288px;
+  //max-width: 288px;
   width: 100%;
   margin: 36px auto;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     margin: 29px auto 64px;
   }
 }
@@ -24,4 +24,9 @@
   text-align: center;
   color: $color-gray;
   margin: 0;
+}
+
+.show-more__btn {
+  padding-left: 20px;
+  padding-right: 20px;
 }

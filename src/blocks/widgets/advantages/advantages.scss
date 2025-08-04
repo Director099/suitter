@@ -3,7 +3,11 @@
 }
 
 .advantages__title {
-  margin-bottom: 40px;
+  margin-bottom: 28px;
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 40px;
+  }
 }
 
 .advantages__warning {
@@ -28,7 +32,7 @@
     display: none;
   }
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     gap: 10px;
     margin: 0;
     padding: 0;

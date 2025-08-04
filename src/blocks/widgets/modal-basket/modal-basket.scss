@@ -1,5 +1,5 @@
 .modal-basket {
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     max-width: 527px;
   }
 }
@@ -20,7 +20,7 @@
   overflow: auto;
   margin-bottom: 20px;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     height: calc(100vh - 368px);
   }
 }

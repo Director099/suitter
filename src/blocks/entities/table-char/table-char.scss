@@ -1,10 +1,6 @@
 @mixin identTable {
   padding: 10px 16px;
 
-  @media (min-width: $screen-lg) {
-    padding: 16px 20px;
-  }
-
   @media (min-width: $screen-xl) {
     padding: 20px 35px;
   }
@@ -12,10 +8,6 @@
 
 @mixin identTitle {
   padding: 0 16px;
-
-  @media (min-width: $screen-lg) {
-    padding: 0 20px;
-  }
 
   @media (min-width: $screen-xl) {
     padding: 0 35px;
@@ -26,12 +18,14 @@
   position: relative;
   display: block;
   width: 100%;
-  padding: 18px 0 10px;
+  padding: 15px;
 
+  box-shadow: 0 2px 7px 2px rgba(0, 0, 0, .05);
 
   font-weight: 400;
-  font-size: 18px;
-  line-height: 130%;
+  font-size: 13px;
+  line-height: 1;
+  border-radius: 6px;
 
   fill: transparent;
   stroke: $bg-color;
@@ -39,24 +33,36 @@
   &.is-active .table-char__title::after {
     transform: translateY(-50%) rotate(-0deg);
   }
+
+  @media (min-width: $screen-xl) {
+    box-shadow: none;
+    padding: 18px 0 10px;
+
+    font-size: 18px;
+    line-height: 130%;
+    border-radius: 0;
+  }
 }
 
 
 .table-char.current {
-  color: $white;
+  border: 1px solid $bg-color;
 
-  stroke: $white;
+  @media (min-width: $screen-xl) {
+    color: $white;
+    stroke: $white;
 
-  &::after {
-    content: "";
-    position: absolute;
-    left: -10px;
-    right: -10px;
-    top: 0;
-    bottom: 0;
-    background-color: $bg-color;
-    border-radius: 14px;
-    z-index: -1;
+    &::after {
+      content: "";
+      position: absolute;
+      left: -10px;
+      right: -10px;
+      top: 0;
+      bottom: 0;
+      background-color: $bg-color;
+      border-radius: 14px;
+      z-index: -1;
+    }
   }
 }
 
@@ -69,23 +75,54 @@
   border-collapse: collapse;
 }
 
-.table-char__label {
-  //@include identTable();
-  width: 100%;
-
+.table-char__tr:not(:last-child) td {
+  padding-bottom: 5px;
 }
 
 .table-char__value,
 .table-char__label {
-  padding-top: 21.5px;
-  padding-bottom: 21.5px;
+  padding: 0;
+
+  @media (min-width: $screen-xl) {
+    padding-top: 21.5px;
+    padding-bottom: 21.5px;
+  }
+}
+
+.table-char__label {
+  padding: 0 10px 0 0;
+  width: 100%;
+
+  @media (min-width: $screen-xl) {
+    padding: 0;
+  }
+}
+
+.table-char__value {
+  text-align: right;
+
+  @media (min-width: $screen-xl) {
+    text-align: initial;
+  }
 }
 
 .table-char__text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 84px;
+  @media (min-width: $screen-xl) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 84px;
+  }
+}
+
+.table-char__text svg {
+  width: 16px;
+  height: 16px;
+
+  @media (min-width: $screen-xl) {
+    width: 36px;
+    height: 36px;
+  }
 }
 
 .table-char__warning {
@@ -101,7 +138,7 @@
   //@include identTitle();
   margin-bottom: 20px;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     margin-bottom: 16px;
   }
 }
@@ -129,7 +166,7 @@
     background-repeat: no-repeat;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='26' height='14' viewBox='0 0 26 14' fill='none'%3E%3Cpath d='M1 13L13 1L25 13' stroke='%23070707' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-xl) {
       display: none;
     }
   }
@@ -137,8 +174,11 @@
 
 .table-char__icon-title {
   display: block;
-  margin: 0 auto 5px;
-  text-align: center;
+  margin-bottom: 5px;
+  @media (min-width: $screen-xl) {
+    margin: 0 auto 5px;
+    text-align: center;
+  }
 }
 
 .table-char__btn {
@@ -161,7 +201,7 @@
   color: $black;
   margin-top: 27px;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     position: absolute;
     top: 100%;
     left: 0;
@@ -184,7 +224,7 @@
 }
 
 .table-char--order {
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     text-align: center;
   }
 }
@@ -192,21 +232,26 @@
 .table-char--order .table-char__label {
   display: block;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     display: none;
   }
 }
 
 .table-char--order .table-char__value {
   font-weight: 500;
-  font-size: 24px;
-  line-height: 130%;
+  font-size: 16px;
+  line-height: 1;
   letter-spacing: 0.1px;
+
+  @media(min-width: $screen-xl) {
+    font-size: 24px;
+    line-height: 130%;
+  }
 }
 
 .table-char--first {
   display: none;
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     text-align: left;
     display: block;
 
@@ -215,7 +260,7 @@
 }
 
 .table-char--first .table-char__header {
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     padding-top: 40px;
   }
 }
@@ -223,7 +268,7 @@
 .table-char--first .table-char__text {
   justify-content: flex-start;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     padding-right: 20px;
   }
 }

@@ -1,16 +1,12 @@
 .delivery-and-return {
   position: relative;
-  padding-top: 20px;
-
-  @media (min-width: $screen-lg) {
-    padding-top: 40px;
-  }
+  padding-top: 40px;
 }
 
 .delivery-and-return__steps {
   margin-bottom: 40px;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     margin-bottom: 80px;
   }
 }
@@ -18,11 +14,15 @@
 .delivery-and-return__content {
   display: flex;
   flex-direction: column;
-  gap: 60px;
+  gap: 28px;
 
   font-weight: 400;
   font-size: 18px;
   line-height: 130%;
+
+  @media (min-width: $screen-xl) {
+    gap: 60px;
+  }
 }
 
 .delivery-and-return__content--width {

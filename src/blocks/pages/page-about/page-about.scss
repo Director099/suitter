@@ -1,12 +1,12 @@
 .page-about {
   padding-top: 20px;
-  @media(min-width: $screen-lg) {
+  @media(min-width: $screen-xl) {
     padding-top: 80px;
   }
 }
 
 .page-about__card-content {
-  @media(min-width: $screen-lg) {
+  @media(min-width: $screen-xl) {
     flex-direction: row-reverse;
   }
 }
@@ -14,7 +14,11 @@
 .page-about__stack {
   display: flex;
   flex-direction: column;
-  gap: 80px;
+  gap: 28px;
+
+  @media (min-width: $screen-xl) {
+    gap: 80px;
+  }
 }
 
 .page-about__slogan {

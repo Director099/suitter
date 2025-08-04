@@ -8,7 +8,7 @@
   display: flex;
   gap: 6px;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     gap: 4px;
   }
 }

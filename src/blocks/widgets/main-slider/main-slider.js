@@ -11,7 +11,7 @@ new Swiper("[data-main-slider]", {
   },
 
   breakpoints: {
-    [MediaSize.LG]: {
+    [MediaSize.XL]: {
       slidesPerView: 2,
     }
   }

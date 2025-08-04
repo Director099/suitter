@@ -81,7 +81,7 @@
   width: 100%;
   gap: 10px;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     flex-direction: row;
     align-items: flex-start;
   }
@@ -101,9 +101,13 @@
   align-self: flex-end;
   fill: transparent;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     height: auto;
     align-self: initial;
+  }
+
+  &.active {
+    fill: $bg-color;
   }
 }
 

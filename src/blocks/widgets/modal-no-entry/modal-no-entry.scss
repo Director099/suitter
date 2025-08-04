@@ -6,7 +6,7 @@
   line-height: 140%;
   color: #595959;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     position: relative;
     border-radius: 20px;
     padding: 50px 24px;
@@ -16,7 +16,7 @@
 }
 
 .modal-no-entry .modal__title {
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     font-weight: 400;
     font-size: 28px;
     line-height: 100%;
@@ -24,14 +24,14 @@
 }
 
 .modal-no-entry .modal__header {
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     margin-bottom: 24px;
     justify-content: center;
   }
 }
 
 .modal-no-entry .modal__close {
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     position: absolute;
     top: 20px;
     right: 20px;

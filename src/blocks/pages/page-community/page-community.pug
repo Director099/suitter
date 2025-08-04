@@ -7,11 +7,10 @@ mixin page-community
       text: 'Ваш путь к привилегиям начинается здесь. Открывайте уровни, получайте ключи и доступ к новым возможностям',
       btnText: 'Присоединиться к комьюнити',
       btnHref: '#',
-      isImg: true
     }).page-community__main-product
     +card-content({
       title: 'Что такое комьюнити the Suitter?',
-      classNamePick: 'd-none d-lg-block'
+      classNamePick: 'd-none d-xl-block'
     }).page-community__card-content
       p Это не просто программа лояльности. Это ваш персональный доступ к привилегиям: бонусным баллам за каждую покупку, раннему доступу к новым коллекциям, закрытым мероприятиям и персональным предложениям.
       p Здесь ценят выбор, внимание к деталям и искреннюю приверженность стилю
@@ -31,7 +30,7 @@ mixin page-community
       title: 'Каждый ключ открывает больше',
       hasSlider: false
     }).page-community__table
-      .page-community__table-char(data-accordion="parent", data-destroy=`(max-width: ${mediaSize.lg - 1}px)`)
+      .page-community__table-char(data-accordion="parent", data-destroy=`(max-width: ${mediaSize.xl - 1}px)`)
         each item, i in listStatus
           - const firstElem = i === 0 ? `table-char--first` : 'table-char--order';
           - const classActive = item.current && 'current';

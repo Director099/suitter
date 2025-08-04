@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 25px;
 
-  @media(min-width: $screen-lg) {
+  @media(min-width: $screen-xl) {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -16,7 +16,7 @@
   font-size: 18px;
   line-height: 130%;
 
-  @media(min-width: $screen-lg) {
+  @media(min-width: $screen-xl) {
     max-width: 447px;
   }
 }

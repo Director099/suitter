@@ -1,7 +1,8 @@
 import scrollLock from "../../../libs/scroll-lock";
 
 export const MediaSize = {
-  LG: 1024
+  LG: 1024,
+  XL: 1200,
 }
 
 export class ToggleOverlay {

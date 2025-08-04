@@ -4,7 +4,7 @@ mixin block-products({title, textLink, btnText, hasSlider=true})
       h2.main-title.block-products__title= title
       if(!!textLink)
         a.btn.btn--light-no-border.block-products__link(href=pages.catalog.href)
-          span.d-none.d-lg-flex= textLink
+          span.d-none.d-xl-flex= textLink
           svg(width="36" height="15")
             use(href="img/symbols.svg#icon-arrow-right")
     if(hasSlider)

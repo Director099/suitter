@@ -4,7 +4,7 @@
   padding-left: 15px;
   padding-right: 15px;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     margin: 0 -40px;
     padding: 0 40px;
   }
@@ -17,7 +17,7 @@
   gap: 10px;
   margin-bottom: 16px;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     margin-bottom: 40px;
   }
 }
@@ -35,7 +35,7 @@
   margin-top: 8px;
   margin-bottom: 0;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     font-size: 14px;
     line-height: 22px;
     margin-top: 16px;
@@ -44,7 +44,7 @@
 }
 
 .block-products__list {
-  @media (max-width: $screen-lg - 1) {
+  @media (max-width: $screen-xl - 1) {
     gap: 8px;
     display: flex;
     padding: 0 15px;
@@ -59,7 +59,7 @@
 .block-products__list-blog {
   gap: 12px 0;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     gap: 12px 0;
   }
 }
@@ -77,7 +77,7 @@
   font-size: 14px;
   line-height: 44px;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     font-size: 16px;
     line-height: 50px;
     padding: 0 32px;
@@ -89,7 +89,7 @@
   max-width: 312px;
   flex-shrink: 0;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     width: 100%;
     max-width: 100%;
   }
@@ -112,13 +112,13 @@
     background-color: $text-color;
   }
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     display: block;
   }
 }
 
 .page-community__table .block-products__header {
- @media (min-width: $screen-lg) {
+ @media (min-width: $screen-xl) {
    margin-bottom: 54px;
  }
 }

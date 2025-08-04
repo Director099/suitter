@@ -11,7 +11,7 @@
 .not-found__title {
   display: flex;
   font-weight: 100;
-  font-size: 202px;
+  font-size: 132px;
   line-height: 110%;
   text-align: center;
   text-transform: uppercase;
@@ -21,10 +21,8 @@
     transform: rotate(20deg);
   }
 
-  @media (min-width: $screen-lg) {
-    font-weight: 100;
+  @media (min-width: $screen-xl) {
     font-size: 202px;
-    line-height: 110%;
   }
 }
 

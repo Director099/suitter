@@ -5,7 +5,7 @@
   flex-direction: column;
   gap: 20px;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     display: grid;
     grid-template-columns: 256px 1fr;
     align-items: flex-start;
@@ -21,7 +21,7 @@
   flex-direction: column;
   gap:  20px;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     position: sticky;
     top: calc(#{$lgHeightHeader} + 10px);
     left: 0;
@@ -34,7 +34,7 @@
   flex-direction: column;
   gap: 50px;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     gap: 80px;
   }
 }
@@ -43,8 +43,12 @@
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 40px;
+  gap: 28px;
   line-height: 140%;
+
+  @media (min-width: $screen-xl) {
+    gap: 40px;
+  }
 }
 
 .blog-single__content p {
@@ -73,7 +77,7 @@
     width: 100%;
   }
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     gap: 11px;
   }
 }

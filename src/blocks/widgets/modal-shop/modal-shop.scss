@@ -24,7 +24,7 @@
 .modal-shop__modal {
   display: block;
 
-  @media(min-width: $screen-lg) {
+  @media(min-width: $screen-xl) {
     position: static;
     max-width: 495px;
   }

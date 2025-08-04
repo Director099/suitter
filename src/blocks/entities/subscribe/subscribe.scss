@@ -8,7 +8,7 @@
   padding: 0px 0px 30px;
   text-align: center;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     padding: 36px 20px 55px;
     max-width: 980px;
     text-align: initial;
@@ -22,7 +22,7 @@
   gap: 16px;
   align-items: center;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     align-items: flex-start;
   }
 }
@@ -46,7 +46,7 @@
     margin: 0;
   }
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     font-size: 15px;
   }
 }
@@ -57,7 +57,7 @@
   gap: 15px;
   margin-bottom: 21px;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     gap: 0;
     flex-direction: row;
   }
@@ -78,7 +78,7 @@
   letter-spacing: 0.3px;
   padding: 12px 20px;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     padding: 16px 20px;
   }
 }
@@ -104,7 +104,7 @@
     background-color: $color-gray;
   }
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     width: 90px;
     font-size: 0;
   }

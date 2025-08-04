@@ -2,7 +2,7 @@
   gap: 28px;
   margin: 0 -15px;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     gap: 3px;
     margin: 0 -40px;
   }
@@ -19,7 +19,7 @@
 }
 
 .promo-blocks__link--ident {
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     margin: 0 -40px;
   }
 }

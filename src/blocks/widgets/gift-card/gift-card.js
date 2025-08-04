@@ -1,6 +1,13 @@
+import {MediaSize} from "../../shared/utils-js/utils";
+
 const swiper = new Swiper("[data-cert-card-slider]", {
   spaceBetween: 4,
-  slidesPerView: 6,
+  slidesPerView: 4,
+  breakpoints: {
+    [MediaSize.XL]: {
+      slidesPerView: 6,
+    }
+  }
 });
 
 new Swiper("[data-thumbs-slider]", {

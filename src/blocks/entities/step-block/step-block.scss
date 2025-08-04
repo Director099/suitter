@@ -1,21 +1,31 @@
 .step-block {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
-  min-height: 463px;
+  justify-content: flex-start;
+
   background-color: #F7F7F7;
-  padding: 33px 37px;
+  padding: 20px;
 
   font-weight: 400;
   font-size: 18px;
   line-height: 130%;
+  min-width: 260px;
+
+  @media(min-width: $screen-xl) {
+    padding: 33px 37px;
+    min-height: 463px;
+    justify-content: flex-end;
+  }
 }
 
 .step-block__column {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  min-height: 197px;
+
+  @media(min-width: $screen-xl) {
+    min-height: 197px;
+  }
 }
 
 .step-block__desc p:last-child {
@@ -25,10 +35,14 @@
 .step-block--advantages {
   background-color: transparent;
 
-  min-height: 282px;
-  padding: 27px 23px;
+  @media(min-width: $screen-xl) {
+    padding: 27px 23px;
+    min-height: 282px;
+  }
 }
 
 .step-block--advantages .step-block__column {
-  min-height: 129px;
+  @media(min-width: $screen-xl) {
+    min-height: 129px;
+  }
 }

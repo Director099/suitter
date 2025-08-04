@@ -5,10 +5,19 @@
   font-weight: 400;
   font-size: 18px;
   line-height: 130%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  @media(min-width: $screen-xl) {
+    gap: 0px;
+  }
 }
 
 .page-cert__gap {
-  @media(min-width: $screen-lg) {
+  gap: 15px;
+  @media(min-width: $screen-xl) {
     gap: 10px;
   }
 }

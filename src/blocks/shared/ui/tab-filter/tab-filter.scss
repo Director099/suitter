@@ -40,6 +40,8 @@
 .tab-filter--modal .tab-filter__btn {
   padding-left: 15px;
   padding-right: 15px;
+
+  height: 100%;
 }
 
 .tab-filter--modal .tab-filter__header {
@@ -76,7 +78,7 @@
 //    display: flex;
 //  }
 //
-//  @media (min-width: $screen-lg) {
+//  @media (min-width: $screen-xl) {
 //    display: none;
 //  }
 //}

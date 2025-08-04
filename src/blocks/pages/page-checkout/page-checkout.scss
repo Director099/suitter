@@ -24,7 +24,7 @@
   align-items: flex-start;
   gap: 12px;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     display: grid;
     grid-template-columns: 1fr 388px;
     gap: 160px;

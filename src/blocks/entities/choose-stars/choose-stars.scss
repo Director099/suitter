@@ -41,7 +41,7 @@
     transition: $time;
     fill: currentColor;
 
-    @media (min-width: $screen-lg) {
+    @media (min-width: $screen-xl) {
       height: 35px;
       width: 35px;
     }

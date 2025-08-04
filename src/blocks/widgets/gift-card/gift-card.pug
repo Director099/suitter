@@ -12,7 +12,7 @@ mixin gift-card
         h2.main-title.gift-card__title Подарочная карта
         .gift-card__thumbs-slider
           h3.gift-card__sub-title Выберите оформление
-          .swiper(data-cert-card-slider="")
+          .swiper.gift-card__swiper(data-cert-card-slider="")
             .swiper-wrapper
               each item, i in Array.from({length: 6})
                 .swiper-slide.gift-card__slide

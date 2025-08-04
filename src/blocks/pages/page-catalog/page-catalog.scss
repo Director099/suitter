@@ -5,7 +5,11 @@
 }
 
 .page-catalog__header {
-  margin-bottom: 40px;
+  margin-bottom: 20px;
+
+  @media (min-width: $screen-xl) {
+    margin-bottom: 40px;
+  }
 }
 
 .page-catalog__title {
@@ -43,7 +47,7 @@
   margin-left: -15px;
   margin-right: -15px;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     display: grid;
     grid-template-columns: 280px 1fr;
     gap: 28px;
@@ -55,10 +59,6 @@
 .page-catalog__gap {
   gap: 20px 4px;
 
-  @media (min-width: $screen-lg) {
-    gap: 34px 12px;
-  }
-
   @media (min-width: $screen-xl) {
     gap: 34px 12px;
   }
@@ -67,7 +67,12 @@
 .page-catalog__row {
   display: flex;
   justify-content: space-between;
-  gap: 10px;
+  align-items: center;
+  gap: 15px;
+
+  @media (min-width: $screen-xl) {
+    align-items: flex-start;
+  }
 }
 
 .page-catalog__col {
@@ -91,7 +96,7 @@
     display: none;
   }
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     flex-wrap: wrap;
   }
 }
@@ -130,17 +135,13 @@
 .page-catalog__articles {
   gap: 12px 0;
 
-  @media (min-width: $screen-lg) {
-    gap: 40px 0;
-  }
-
   @media (min-width: $screen-xl) {
     gap: 40px 0;
   }
 }
 
 .page-catalog__show-more {
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     margin: 63px auto 79px;
   }
 }

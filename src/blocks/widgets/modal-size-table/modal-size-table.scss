@@ -3,7 +3,7 @@
   gap: 24px;
   flex-wrap: wrap;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     flex-wrap: nowrap;
   }
 }

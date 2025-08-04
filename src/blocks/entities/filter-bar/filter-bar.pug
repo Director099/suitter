@@ -6,8 +6,8 @@ mixin filter-bar({text, counter, iconFilter, iconArrow})
           use(href="img/symbols.svg#icon-filter")
         if(!!counter)
           span.filter-bar__counter= counter
-    span.d-none.d-lg-block= text
+    span.d-none.d-xl-block= text
     if(!!iconArrow)
-      svg.filter-bar__arrow.d-none.d-lg-block(width="16", height="8")
+      svg.filter-bar__arrow.d-none.d-xl-block(width="16", height="8")
         use(href="img/symbols.svg#icon-arrow-bottom")
 

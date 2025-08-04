@@ -17,7 +17,7 @@ $text-color:                  hsl(0, 0%, 10%) !default;
   font-size: 14px;
   line-height: 130%;
 
-  @media(min-width: $screen-lg) {
+  @media(min-width: $screen-xl) {
     padding: 40px 0;
   }
 }

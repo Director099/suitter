@@ -98,10 +98,6 @@
 }
 
 .main-nav__previews {
-  @media(min-width: $screen-lg) {
-    gap: 10px;
-  }
-
   @media(min-width: $screen-xl) {
     gap: 10px;
   }

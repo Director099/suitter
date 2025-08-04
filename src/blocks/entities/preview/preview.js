@@ -1,6 +1,6 @@
 import {MediaSize} from "../../shared/utils-js/utils";
 
-if (window.matchMedia(`(min-width: ${MediaSize.LG}px)`).matches) {
+if (window.matchMedia(`(min-width: ${MediaSize.XL}px)`).matches) {
   document.querySelectorAll('[data-preview-slider]').forEach((elem) => {
     const slider = new Swiper(elem, {
       speed: 0,

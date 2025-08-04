@@ -25,7 +25,7 @@
   flex-direction: column;
   gap: 28px;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     padding: 0 40px;
     gap: 80px;
   }

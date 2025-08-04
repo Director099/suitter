@@ -18,13 +18,13 @@
     margin-bottom: 8px;
   }
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     max-width: 495px;
   }
 }
 
 .modal-content .modal__header {
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     margin-bottom: 34px;
   }
 }

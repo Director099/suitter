@@ -21,6 +21,6 @@ mixin dropdown({text, attrs})
     button.dropdown__toggler(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')&attributes(attrs)
       svg(width="24", height="24")
         use(href="img/symbols.svg#icon-sorting")
-      span.d-none.d-lg-block!= text
+      span.d-none.d-xl-block!= text
     span.dropdown__menu(aria-labelledby=id)
       block

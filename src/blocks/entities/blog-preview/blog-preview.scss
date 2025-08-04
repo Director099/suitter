@@ -23,7 +23,7 @@
   line-height: 114%;
   margin: 0;
 
-  @media(min-width: $screen-lg) {
+  @media(min-width: $screen-xl) {
     font-size: 18px; // На мобилке длинные слова не вмещаются
   }
 }

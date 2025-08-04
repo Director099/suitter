@@ -17,7 +17,7 @@
 
   padding: 20px 15px;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     margin-left: -40px;
     margin-right: -40px;
     padding: 20px 276px 20px 186px;
@@ -43,6 +43,9 @@
 }
 
 .main-block__btn {
+  border-color: $white;
   padding-left: 28px;
   padding-right: 28px;
+  max-width: 388px;
+  width: 100%;
 }

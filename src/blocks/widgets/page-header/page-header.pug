@@ -2,14 +2,14 @@ mixin page-header({basketId="#modal-basket-no-empty"})
   header.page-header
     +logo(pages.index.href).page-header__logo
     .page-header__wrap
-      +burger('меню')(data-src="#modal-menu").d-lg-none
+      +burger('меню')(data-src="#modal-menu").d-xl-none
       +main-nav.page-header__navigation
       ul.page-header__actions
         li.page-header__actions-item
           +link-icon({
             svg: 'search',
           }).page-header__actions-link
-        li.page-header__actions-item.d-none.d-lg-block
+        li.page-header__actions-item.d-none.d-xl-block
           +link-icon({
             svg: 'user',
           }).page-header__actions-link(data-fancybox="" href="#modal-entry")

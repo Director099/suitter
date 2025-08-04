@@ -19,7 +19,7 @@
     background-color: $color-light;
   }
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     align-items: center;
     justify-content: space-between;
     flex-wrap: nowrap;
@@ -39,7 +39,7 @@
   border-bottom: 1px solid $color-light;
   border-top: 1px solid $color-light;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     gap: 0;
     border: none;
     padding: 0;
@@ -52,9 +52,9 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 10px 0;
+  padding: 15px 0;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     position: absolute;
     top: 50%;
     left: 50%;
@@ -69,7 +69,7 @@
 .page-header__navigation {
   display: none;
 
-  @media (min-width: $screen-lg) {
+  @media (min-width: $screen-xl) {
     position: relative;
     display: flex;
     align-items: center;

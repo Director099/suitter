@@ -9,7 +9,7 @@ document.querySelectorAll('[data-product-slider]').forEach((elem) => {
       el: ".swiper-scrollbar",
     },
     breakpoints: {
-      [MediaSize.LG]: {
+      [MediaSize.XL]: {
         slidesPerView: 4,
       }
     }
