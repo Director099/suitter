@@ -3,9 +3,12 @@ mixin range
     .range__slider(id="slider-range")
     .range__row
       label.range__label
-        span.range__text от
-        input.range__input(type="number" id="input-range-0")
+        span.range__description Мин. цена
+        //-span.range__text от
+        input.range__input(type="number" id="input-range-0" placeholder="от 70 BYN")
+      span.range__separator —
       label.range__label
-        span.range__text до
-        input.range__input(type="number" id="input-range-1")
+        span.range__description Макс. цена
+        //-span.range__text до
+        input.range__input(type="number" id="input-range-1" placeholder="до 2500 BYN")
 

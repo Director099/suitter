@@ -13,7 +13,7 @@ import '../blocks/shared/ui/tab-filter/tab-filter.js';
 import '../blocks/entities/preview/preview.js';
 // import '../blocks/entities/search-form/search-form.js';
 import '../blocks/entities/product-gallery/product-gallery.js';
-import '../blocks/entities/range/range.js';
+// import '../blocks/entities/range/range.js';
 
 import '../blocks/widgets/main-slider/main-slider.js';
 import '../blocks/widgets/block-products/block-product.js';

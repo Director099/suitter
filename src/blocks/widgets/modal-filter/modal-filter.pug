@@ -7,6 +7,12 @@ mixin modal-filter
   }).modal-filter
     form.modal-filter__form
       button.btn.btn--line.modal-filter__btn(type="reset") Сбросить фильтр
+      .modal-filter__tags
+        each item in ['в наличии', '500 – 2000 BYN', 'Пуховик', 'М', 'чёрный', 'гусиный пух']
+          +tag-filter({
+            title: item,
+            iconClose: true
+          })
       ul.modal-filter__list
         li.modal-filter__item
           +link-info({text: 'В наличии'})
