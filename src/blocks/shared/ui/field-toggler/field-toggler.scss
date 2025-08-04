@@ -12,7 +12,6 @@ $line-height:                 1.5 !default;
   $block-name:                &; // #{$block-name}__element
 
   display: block;
-  margin-bottom: 1rem;
 
   &__title {
 
@@ -27,45 +26,38 @@ $line-height:                 1.5 !default;
 
   &__name {
     position: relative;
-    display: inline-block;
-    padding-left: 3.2rem;
-    margin-right: 0.6rem;
+    display: block;
     font-weight: 400;
-    line-height: $line-height;
+    line-height: 0;
   }
 
   &__name-text {
+    position: relative;
     display: inline-block;
-
-    &:before {
-      content: '';
-      position: absolute;
-      top: 3px;
-      left: 0;
-      width: 35px;
-      height: 18px;
-      background-color: #fff;
-      border: 1px solid $border-color;
-
-      @at-root input:focus ~ & {
-        @include field-focus;
-      }
-    }
+    width: 44px;
+    height: 24px;
+    background-color: #E4E4E4;
+    transition: $time;
+    border-radius: 50px;
 
     &:after {
       content: '';
       position: absolute;
-      top: 5px;
-      left: 2px;
-      width: 14px;
-      height: 14px;
-      background-color: $gray-lightest;
-      border: 1px solid $border-color;
-      transition: all 0.3s;
+      top: 3px;
+      left: 3px;
+      width: 18px;
+      height: 18px;
+      background-color: $white;
+      transition: all $time;
+      border-radius: 50px;
+    }
+
+    @at-root input:checked ~ span {
+      background-color: $bg-color;
     }
 
     @at-root input:checked ~ &:after {
-      transform: translate(17px, 0);
+      transform: translate(19px, 0);
     }
   }
 

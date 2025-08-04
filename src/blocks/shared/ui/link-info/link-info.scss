@@ -1,5 +1,7 @@
 .link-info {
-  display: block;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
   font-weight: 400;
   font-size: 18px;
   line-height: 130%;
@@ -11,4 +13,35 @@
   background-image: url("data:image/svg+xml,%3Csvg width='16' height='17' viewBox='0 0 16 17' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 12.5L10 8.5' stroke='%231E1E1E' stroke-width='1.2' stroke-linecap='round'/%3E%3Cpath d='M10 8.5L6 4.5' stroke='%231E1E1E' stroke-width='1.2' stroke-linecap='round'/%3E%3C/svg%3E%0A");
   background-position: right center;
   background-repeat: no-repeat;
+
+  &--no-arrow {
+    background-image: none;
+    padding-right: 0;
+  }
+}
+
+.link-info__filter-text {
+  margin: 0;
+  color: $color-gray;
+  font-size: 16px;
+  font-weight: 300;
+
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.link-info__box-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 0;
+}
+
+.link-info__box-color {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  border-radius: 50px;
 }

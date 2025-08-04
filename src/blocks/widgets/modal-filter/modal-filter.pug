@@ -15,9 +15,16 @@ mixin modal-filter
           })
       ul.modal-filter__list
         li.modal-filter__item
-          +link-info({text: 'В наличии'})
+          .link-info.link-info--no-arrow В наличии
+            +field-toggler([
+              {
+                attrs: {
+                  name: 'check-toggle',
+                }
+              },
+            ])
         li.modal-filter__item(data-filter="")
-          +link-info({text: 'Категория'})(data-filter-link="")
+          +link-info({text: 'Категория', filterText: 'Брюки, Пуховик, Платье, Свитер, Юбки'})(data-filter-link="")
           +filter-current({title: 'Категория'})
             .filter-current__checkboxes
               each item in checkboxListCategory
@@ -40,7 +47,7 @@ mixin modal-filter
                   counter: item.counter
                 })
         li.modal-filter__item(data-filter="")
-          +link-info({text: 'Цвет'})(data-filter-link="")
+          +link-info({text: 'Цвет', boxColor: true})(data-filter-link="")
           +filter-current({title: 'Цвет'})
             .filter-current__checkboxes
               each item in checkboxListColors

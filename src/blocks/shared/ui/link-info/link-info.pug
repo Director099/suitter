@@ -1,2 +1,8 @@
-mixin link-info({href, text, fancybox})
+mixin link-info({href, text, fancybox, filterText, boxColor})
   a.link-info&attributes(attributes)(href=href data-fancybox=fancybox)= text
+    if(!!filterText)
+      p.link-info__filter-text= filterText
+    if(!!boxColor)
+      p.link-info__box-row
+        span.link-info__box-color(style="background-color: rgb(171, 124, 73)")
+        span.link-info__box-color(style="background-color: rgb(201, 173, 147)")
