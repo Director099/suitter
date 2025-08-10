@@ -12,7 +12,10 @@
 .modal-filter .modal__dialog,
 .modal-filter .modal__content {
   position: static;
-  height: 100%;
+
+  @media (min-width: $screen-xl) {
+    height: 100%;
+  }
 }
 
 .modal-filter__form {
