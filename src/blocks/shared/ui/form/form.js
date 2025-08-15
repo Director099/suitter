@@ -2,15 +2,22 @@ document.querySelectorAll("[data-form]").forEach((itemForm) => {
   const pristine = new Pristine(itemForm, {
     classTo: 'field-text',
     errorTextParent: 'field-text',
-  });
+  }, false);
 
-  const submitForm = (e) =>  {
-    const _disabled = 'disabled';
+  const onSubmitForm = (e) =>  {
     const valid = pristine.validate();
-    const btnSubmit = pristine.form.querySelector("[data-form-btn]");
-    valid ? btnSubmit.removeAttribute(_disabled) : btnSubmit.setAttribute(_disabled, _disabled);
     return valid ? true : e.preventDefault();
   }
 
-  ["submit", "input"].forEach(item => itemForm.addEventListener(item, e => submitForm(e)))
+  const onChangeForm = (e) =>  {
+    const parent = e.target.closest('.field-text');
+    parent.classList.remove('has-danger');
+
+    if(!!parent.querySelector('.pristine-error')) {
+      parent.querySelector('.pristine-error').textContent = "";
+    }
+  }
+
+  itemForm.addEventListener("submit", onSubmitForm);
+  itemForm.addEventListener("input", onChangeForm);
 })

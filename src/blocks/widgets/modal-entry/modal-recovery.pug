@@ -21,14 +21,14 @@ mixin modal-recovery()
                 type: item.attrs.type,
                 minlength: item.attrs.minlength,
                 min: item.attrs.min,
-                pattern: item.attrs.pattern,
-                'data-pristine-required-message': " ",
+                'data-pristine-pattern': item.attrs.pattern,
+                'data-pristine-required-message': "Поле является обязательным",
                 'data-pristine-minlength-message': item.attrs['data-pristine-minlength-message'],
                 'data-pristine-min-message': item.attrs['data-pristine-min-message'],
                 'data-pristine-pattern-message': item.attrs['data-pristine-pattern-message'],
                 "data-number-only": item.attrs['data-number-only'],
                 "data-pristine-email-message": item.attrs["data-pristine-email-message"],
-                "data-pristine-equals-message": item.attrs["data-pristine-email-message"],
+                "data-pristine-equals-message": item.attrs["data-pristine-equals-message"],
                 "data-pristine-equals": item.attrs["data-pristine-equals"]
               }
             })

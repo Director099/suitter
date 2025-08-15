@@ -27,8 +27,8 @@ mixin modal-reg()
                 type: item.attrs.type,
                 minlength: item.attrs.minlength,
                 min: item.attrs.min,
-                pattern: item.attrs.pattern,
-                'data-pristine-required-message': " ",
+                'data-pristine-pattern': item.attrs.pattern,
+                'data-pristine-required-message': "Поле является обязательным",
                 'data-pristine-minlength-message': item.attrs['data-pristine-minlength-message'],
                 'data-pristine-min-message': item.attrs['data-pristine-min-message'],
                 'data-pristine-pattern-message': item.attrs['data-pristine-pattern-message'],
@@ -41,5 +41,5 @@ mixin modal-reg()
             })
               if(item.attrs.type === 'password')
                 span.field-text__btn-password(aria-label="Показать пароль" data-btn-eye="")
-          button.btn.btn--dark.modal-entry__btn(disabled, data-form-btn="") зарегистрироваться
+          button.btn.btn--dark.modal-entry__btn(data-form-btn="") зарегистрироваться
     p.modal__info У меня уже есть профиль. #[a(data-fancybox-src="#modal-entry") Войти]

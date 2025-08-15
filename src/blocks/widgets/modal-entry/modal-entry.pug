@@ -30,11 +30,11 @@ mixin modal-entry()
               placeholder: formFilelds.phone.attrs.placeholder,
               required: true,
               type: formFilelds.phone.attrs.type,
-              pattern: formFilelds.phone.attrs.pattern,
+              "data-pristine-pattern": formFilelds.phone.attrs.pattern,
               "data-pristine-pattern-message": formFilelds.phone.attrs["data-pristine-pattern-message"]
             }
           })
-          button.btn.btn--dark.modal-entry__btn(disabled, data-form-btn="") Войти
+          button.btn.btn--dark.modal-entry__btn(data-form-btn="") Войти
       .modal-entry__tab(data-filter="entry-email")
         form.modal-entry__fieldset(method="POST" data-form="")
           each item in formEntry
@@ -47,19 +47,19 @@ mixin modal-entry()
                 type: item.attrs.type,
                 minlength: item.attrs.minlength,
                 min: item.attrs.min,
-                pattern: item.attrs.pattern,
-                'data-pristine-required-message': " ",
+                'data-pristine-pattern': item.attrs.pattern,
+                'data-pristine-required-message': "Поле является обязательным",
                 'data-pristine-minlength-message': item.attrs['data-pristine-minlength-message'],
                 'data-pristine-min-message': item.attrs['data-pristine-min-message'],
                 'data-pristine-pattern-message': item.attrs['data-pristine-pattern-message'],
                 "data-number-only": item.attrs['data-number-only'],
                 "data-pristine-email-message": item.attrs["data-pristine-email-message"],
-                "data-pristine-equals-message": item.attrs["data-pristine-email-message"],
+                "data-pristine-equals-message": item.attrs["data-pristine-equals-message"],
                 "data-pristine-equals": item.attrs["data-pristine-equals"]
               }
             })
               if(item.attrs.type === 'password')
                 span.field-text__btn-password(aria-label="Показать пароль" data-btn-eye="")
-          button.btn.btn--dark.modal-entry__btn(disabled, data-form-btn="") Войти
+          button.btn.btn--dark.modal-entry__btn(data-form-btn="") Войти
       a.line-link.modal-entry__forgot-psw(data-fancybox-src="#modal-recovery") Забыли пароль?
     p.modal__info У меня ещё нет профиля. #[a(data-fancybox-src="#modal-reg") Зарегистрироваться]

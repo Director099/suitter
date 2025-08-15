@@ -51,11 +51,11 @@ mixin modal-gift
                 placeholder: formFilelds.email.attrs.placeholder,
                 required: true,
                 type: formFilelds.email.attrs.type,
-                'data-pristine-required-message': " ",
+                'data-pristine-required-message': "Поле является обязательным",
                 'data-pristine-email-message': formFilelds.email.attrs["data-pristine-email-message"],
               }
             })
-          button.btn.btn--dark.modal-gift__btn(disabled, data-form-btn="") перейти к оплате
+          button.btn.btn--dark.modal-gift__btn(data-form-btn="") перейти к оплате
       .modal-gift__tab(data-filter="send-to-recipient")
         form.modal-gift__fieldset(method="POST" data-form="")
           input.d-none(type="text" data-input-value-cert="" value="500")
@@ -70,7 +70,7 @@ mixin modal-gift
                   type: item.attrs.type,
                   minlength: item.attrs.minlength,
                   min: item.attrs.min,
-                  pattern: item.attrs.pattern,
+                  'data-pristine-pattern': item.attrs.pattern,
                   "data-pristine-required-message": "Поле является обязательным",
                   'data-pristine-minlength-message': item.attrs['data-pristine-minlength-message'],
                   'data-pristine-min-message': item.attrs['data-pristine-min-message'],
@@ -91,7 +91,7 @@ mixin modal-gift
                   type: item.attrs.type,
                   minlength: item.attrs.minlength,
                   min: item.attrs.min,
-                  pattern: item.attrs.pattern,
+                  'data-pristine-pattern': item.attrs.pattern,
                   "data-pristine-required-message": "Поле является обязательным",
                   'data-pristine-minlength-message': item.attrs['data-pristine-minlength-message'],
                   'data-pristine-min-message': item.attrs['data-pristine-min-message'],
@@ -102,4 +102,4 @@ mixin modal-gift
                   "data-pristine-equals": item.attrs["data-pristine-equals"]
                 }
               })
-          button.btn.btn--dark.modal-gift__btn(disabled, data-form-btn="") перейти к оплате
+          button.btn.btn--dark.modal-gift__btn(data-form-btn="") перейти к оплате
