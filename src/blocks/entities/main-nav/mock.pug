@@ -12,16 +12,20 @@
           list: [
             {
               linkTitle: 'ss’25',
+              href: pages.catalog.href
             },
             {
               linkTitle: 'Пиджаки',
+              href: pages.catalog.href
             },
             {
               linkTitle: 'Брюки',
+              href: pages.catalog.href
             },
             {
               linkTitle: 'SALE',
               linkModified: 'main-nav__sub-link--sale',
+              href: pages.catalog.href
             },
           ],
         }
@@ -29,7 +33,33 @@
     },
     {
       mainItem: 'Инфо',
-      href: "#"
+      subItemColumns: [
+        {
+          subTitle: 'Информация',
+          list: [
+            {
+              linkTitle: pages.pageAbout.text,
+              href: pages.pageAbout.href
+            },
+            {
+              linkTitle: pages.pageDelivery.text,
+              href: pages.pageDelivery.href
+            },
+            {
+              linkTitle: pages.pageReturn.text,
+              href: pages.pageReturn.href
+            },
+            {
+              linkTitle: 'Состав и уход',
+              href: "#"
+            },
+            {
+              linkTitle: pages.blog.text,
+              href: pages.blog.href
+            },
+          ]
+        },
+      ]
     },
     {
       mainItem: 'Магазины',

@@ -2,7 +2,8 @@ include ./mock
 
 mixin main-nav
   ul.main-nav&attributes(attributes)
-    each itemMenu in mainNav
+    each itemMenu, i in mainNav
+      - const firstMainNav = i === 0;
       - const hasAttribute = !!itemMenu.subItemColumns;
       - const mainLink = !!itemMenu.href ? itemMenu.href : pages.catalog.href;
       - const targetBlank = !!itemMenu.target ? "_blank" : false;
@@ -16,14 +17,17 @@ mixin main-nav
                   strong.main-nav__title=container.subTitle
                   ul.main-nav__column
                     each subMenu in container.list
+                      - const linkSubMenu = !!subMenu.href ? subMenu.href : pages.catalog.href;
                       li.main-nav__column-item
-                        a.main-nav__sub-link(href=pages.catalog.href class=subMenu.linkModified)
+                        a.main-nav__sub-link(href=linkSubMenu  class=subMenu.linkModified)
                           span= subMenu.linkTitle
-                  a.main-nav__group-link(href=pages.catalog.href)
-                    svg(width="36" height="15")
-                      use(href="img/symbols.svg#icon-arrow-right")
-              .main-nav__previews.grid-tpl-lg-2.grid-tpl-xl-4
-                +preview({})
-                +preview({})
-                +preview({})
-                +preview({})
+                  if(firstMainNav)
+                    a.main-nav__group-link(href=pages.catalog.href)
+                      svg(width="36" height="15")
+                        use(href="img/symbols.svg#icon-arrow-right")
+              if(firstMainNav)
+                .main-nav__previews.grid-tpl-lg-2.grid-tpl-xl-4
+                  +preview({})
+                  +preview({})
+                  +preview({})
+                  +preview({})
