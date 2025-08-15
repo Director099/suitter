@@ -44,7 +44,8 @@
 }
 
 .modal-no-entry__desc {
-  margin-bottom: 32px;
+  margin: 0 auto 32px;
+  max-width: 400px;
 }
 
 .modal-no-entry__desc p:last-child {

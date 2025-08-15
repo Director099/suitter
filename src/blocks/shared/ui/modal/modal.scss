@@ -155,3 +155,9 @@ $z-index-modal:               100 !default;
     text-decoration: underline;
   }
 }
+
+.modal.f-zoomInUp {
+  @media (min-width: $screen-xl) {
+    transform: scale(0.975) translate3d(0, 0, 0);
+  }
+}
