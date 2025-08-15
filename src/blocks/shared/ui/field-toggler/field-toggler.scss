@@ -51,14 +51,6 @@ $line-height:                 1.5 !default;
       transition: all $time;
       border-radius: 50px;
     }
-
-    @at-root input:checked ~ span {
-      background-color: $bg-color;
-    }
-
-    @at-root input:checked ~ &:after {
-      transform: translate(19px, 0);
-    }
   }
 
   &__input {
@@ -68,6 +60,15 @@ $line-height:                 1.5 !default;
     width: 0;
     height: 0;
     opacity: 0;
+
+
+    @at-root &:checked ~ span {
+      background-color: $bg-color;
+
+      &::after {
+        transform: translate(19px, 0);
+      }
+    }
   }
 
   &__help-text-wrap {

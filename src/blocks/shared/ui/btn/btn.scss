@@ -45,8 +45,7 @@ $border-radius:               4px !default;
     margin: -5px 0;
   }
 
-  &:hover,
-  &:focus {
+  &:hover {
     text-decoration: none;
     color: $text-color;
     background-color: darken($gray-lightest, 10%);
@@ -145,8 +144,7 @@ $border-radius:               4px !default;
       background-color: #595959;
     }
 
-    &:hover,
-    &:focus {
+    &:hover  {
       background-color: #595959;
       border-color: #595959;
       color: $white;

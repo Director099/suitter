@@ -1,7 +1,14 @@
+.gift-card {
+  padding-bottom: 20px;
+  @media(min-width: $screen-xl) {
+    padding-bottom: 132px;
+  }
+}
+
 .gift-card__grid {
   @media(min-width: $screen-xl) {
     display: grid;
-    grid-template-columns: minmax(708px,1fr) 448px;
+    grid-template-columns: minmax(585px,1fr) 448px;
     gap: 88px;
 
     margin-right: 124px;

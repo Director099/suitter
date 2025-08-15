@@ -4,7 +4,7 @@ mixin page-footer()
   - const hasDetails = (item) => item.details ? "content" : false
   footer.page-footer
     .page-footer__container
-      .page-footer__nav(data-accordion="parent" data-single="" data-destroy="(max-width: 1023px)")
+      .page-footer__nav(data-accordion="parent" data-single="" data-destroy="(max-width: 1200px)")
         .page-footer__nav-wrap.page-footer__nav-wrap--content
           +contact
         each item in footerNav

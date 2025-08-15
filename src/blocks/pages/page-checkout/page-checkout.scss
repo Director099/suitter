@@ -1,5 +1,10 @@
 .page-checkout {
   padding-top: 40px;
+  padding-bottom: 40px;
+
+  @media (min-width: $screen-xl) {
+    padding-bottom: 80px;
+  }
 }
 
 .page-checkout__steps {
@@ -29,6 +34,10 @@
     grid-template-columns: 1fr 388px;
     gap: 160px;
   }
+}
+
+.page-checkout__total-amount {
+  width: 100%;
 }
 
 .page-checkout__purchase-total {

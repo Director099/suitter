@@ -19,19 +19,19 @@ block var
     const listAdv = [
       {
         title: 'Без срока действия',
-        text: 'можно использовать в любое время',
+        text: 'можно использовать в&nbsp;любое время',
       },
       {
         title: 'Гибкий номинал',
         text: 'подберите сумму, которая подходит именно вам',
       },
       {
-        title: 'Оплата онлайн и офлайн',
-        text: 'покупки в интернет-магазине и в фирменных точках',
+        title: 'Оплата онлайн и&nbsp;офлайн',
+        text: 'покупки в&nbsp;интернет-магазине и&nbsp;в&nbsp;фирменных точках',
       },
       {
         title: 'Мгновенная доставка',
-        text: 'электронный сертификат придет на email сразу после оплаты',
+        text: 'электронный сертификат придет на&nbsp;email сразу после оплаты',
       },
     ]
 
@@ -54,7 +54,7 @@ block content
     .page-cert__gap.swipe-list.grid-tpl-xl-4
       each item, i in listAdv
         +step-block({
-          title: `Шаг ${i + 1}`,
+          title: item.title,
           text: item.text,
         }).step-block--advantages
   +block-products({

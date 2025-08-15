@@ -10,12 +10,6 @@ block header
 block content
   .page-about
     .page-about__stack
-      //.page-about__row
-      //  .page-about__pick
-      //    img(src="img/content/page-about.jpg" alt="Простота. Индивидуальность. Качество.")
-      //  section.page-about__main-content
-      //    h1.main-title.page-about__title Простота. Индивидуальность. Качество.
-      //    p это капсульный гардероб, где каждая вещь создана для вашего комфорта и самовыражения. Мы проектируем лаконичные модели с идеальным кроем, которые легко сочетаются между собой, экономя ваше время и подчеркивая уникальность.
       +card-content({
         title: 'Простота. Индивидуальность. Качество.',
         img: 'img/content/page-about.jpg'
@@ -27,7 +21,7 @@ block content
           p готовые решения для любого повода
         +card-info("Натуральные ткани и точный крой").advantages__card
           p для долговечности и легкости
-        +card-info("Cвобода самовыражения").advantages__card
+        +card-info("Cвобода <br> самовыражения").advantages__card
           p без компромиссов в стиле
       h2.main-title.page-about__slogan Мы верим, #[br] что мода должна вдохновлять, а не усложнять
       +preview-community({

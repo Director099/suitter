@@ -1,5 +1,5 @@
 mixin card-info(title)
   .card-info&attributes(attributes)
-    h2.main-title.card-info__title= title
+    h2.main-title.card-info__title!= title
     .card-info__description
       block
