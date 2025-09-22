@@ -1,9 +1,9 @@
-mixin page-header({basketId="#modal-basket-no-empty"})
+mixin page-header({basketId="#modal-basket-no-empty", href})
   header.page-header
     +logo(pages.index.href).page-header__logo
     .page-header__wrap
       +burger('меню')(data-src="#modal-menu").d-xl-none
-      +main-nav.page-header__navigation
+      +main-nav({href: href}).page-header__navigation
       ul.page-header__actions
         li.page-header__actions-item
           +link-icon({

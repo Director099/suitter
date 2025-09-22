@@ -158,6 +158,6 @@ $z-index-modal:               100 !default;
 
 .modal.f-zoomInUp {
   @media (min-width: $screen-xl) {
-    transform: scale(0.975) translate3d(0, 0, 0);
+    transform: scale(1) translate3d(0, 0, 0) !important;
   }
 }

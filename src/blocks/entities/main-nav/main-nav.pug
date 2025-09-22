@@ -1,6 +1,6 @@
 include ./mock
 
-mixin main-nav
+mixin main-nav({href, subHref})
   ul.main-nav&attributes(attributes)
     each itemMenu, i in mainNav
       - const firstMainNav = i === 0;
@@ -8,7 +8,7 @@ mixin main-nav
       - const mainLink = !!itemMenu.href ? itemMenu.href : pages.catalog.href;
       - const targetBlank = !!itemMenu.target ? "_blank" : false;
       li.main-nav__item(data-has-hover=hasAttribute ? true : false)
-        a.main-nav__link(href=mainLink, target=targetBlank)= itemMenu.mainItem
+        a.main-nav__link(href=itemMenu.href, target=targetBlank class=(itemMenu.href === href) && 'active')= itemMenu.mainItem
         if(hasAttribute)
           .main-nav__submenu
             .main-nav__row
@@ -16,10 +16,11 @@ mixin main-nav
                 .main-nav__group
                   strong.main-nav__title=container.subTitle
                   ul.main-nav__column
-                    each subMenu in container.list
+                    each subMenu, num in container.list
                       - const linkSubMenu = !!subMenu.href ? subMenu.href : pages.catalog.href;
+                      - const subLink = (num === 0) && 'active';
                       li.main-nav__column-item
-                        a.main-nav__sub-link(href=linkSubMenu  class=subMenu.linkModified)
+                        a.main-nav__sub-link(href=linkSubMenu  class=[subMenu.linkModified, subLink])
                           span= subMenu.linkTitle
                   if(firstMainNav)
                     a.main-nav__group-link(href=pages.catalog.href)
